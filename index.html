@@ -72,7 +72,13 @@
 
         .settings-group label { margin-right: 15px; cursor: pointer; }
         .q-count-selector { margin-top: 15px; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;}
-        .q-count-selector input[type="number"] { width: 60px; padding: 5px; border: 1px solid var(--border); border-radius: 4px; background: #161616; color: white;}
+        
+        .q-count-selector input[type="text"] { 
+            width: 230px; padding: 6px; border: 1px solid var(--border); 
+            border-radius: 4px; background: #161616; color: white; font-size: 0.9rem;
+        }
+        .q-count-selector input[type="text"]::placeholder { color: #777; }
+        .q-count-selector input[type="text"]:disabled { opacity: 0.5; cursor: not-allowed; }
 
         .quiz-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 20px;}
         
@@ -102,20 +108,17 @@
         .details-section { margin-top: 40px; text-align: left;}
         .detail-item { padding: 15px; border-left: 4px solid var(--border); background: var(--card-bg); margin-bottom: 10px; }
         
-        /* 錯題閃卡區域 - 全新升級彈性排版 */
         .flashcard-container { perspective: 1000px; cursor: pointer; margin-bottom: 20px; }
         .flashcard-inner {
             transition: transform 0.6s; transform-style: preserve-3d;
-            width: 100%; min-height: 300px;
-            display: grid; /* 使用 Grid 讓卡片可以被內容撐開 */
+            width: 100%; min-height: 300px; display: grid;
         }
         .flashcard-inner.flipped { transform: rotateY(180deg); }
         .flashcard-front, .flashcard-back {
-            grid-area: 1 / 1; /* 正反面疊在同一個網格內 */
-            backface-visibility: hidden; position: relative;
+            grid-area: 1 / 1; backface-visibility: hidden; position: relative;
             width: 100%; display: flex; flex-direction: column;
-            justify-content: center; align-items: flex-start; /* 讓題目與選項靠左對齊 */
-            padding: 50px 30px 30px 30px; /* 增加上方留白給提示字元 */
+            justify-content: center; align-items: flex-start;
+            padding: 50px 30px 30px 30px;
             background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border);
             text-align: left; font-size: 1.1rem; box-sizing: border-box;
         }
@@ -129,7 +132,6 @@
         .modal-overlay.active { display: flex; }
         .modal-content { background: var(--card-bg); padding: 30px; border-radius: var(--radius); text-align: center; max-width: 400px; border: 1px solid var(--border); }
         .modal-buttons { margin-top: 20px; display: flex; justify-content: space-around; }
-
     </style>
 </head>
 <body>
@@ -148,448 +150,216 @@
                     <input type="file" id="file-input" accept=".txt,.pdf" style="display:none;">
                 </div>
                 <textarea id="source-text" placeholder="請輸入題目或上傳檔案。">
-QUESTION 54
-Which two statements about Ethernet standards are true? (choose two)
-A. Ethernet is defined by IEEE standard 802.2
-B. Ethernet is defined by IEEE standard 802.3
-C. Ethernet 10BASE-T dose not support full-duplex.
-D. When an Ethernet network uses CSMA/CD, it terminates transmission as soon as collision occurs
-E. When an Ethernet network uses CSMA/CA, it terminates transmission as soon as collision occurs
-Correct Answer: BD
-
-QUESTION 62
-What feature uses a random time to re-sent a frame?
-A. CSMA/CA
-B. http://bbs.hh010.com/
-C. http://bbs.hh010.com/
-D. CSMA/CD
-Correct Answer: D
-
-QUESTION 192
-In an Ethernet network, under what two scenarios can devices transmit? (Choose two.)
-A. when they receive a special token
-B. when there is a carrier
-C. when they detect no other devices are sending
-D. when the medium is idle
-E. when the server grants access
-Correct Answer: CD
-
-QUESTION 444
-Which MAC protocol sets a random timer to reattempt communication ?
-A. RARP
-B. CSMA/CA
-C. CSMA/CD
-D. IEEE 802.1x
-Correct Answer: C
-
-QUESTION 8
-Which two statements about late collisions are true? (Choose two.)
-A. They may indicate a duplex mismatch.
-B. By definition, they occur after the 512th bit of the frame has been transmitted.
-C. They indicate received frames that did not pass the FCS match.
-D. They are frames that exceed 1518 bytes.
-E. They occur when CRC errors and interference occur on the cable.
-Correct Answer: AB
-
-QUESTION 37
-Which interface counter can you use to diagnose a duplex mismatch problem?
-A. no earner
-B. late collisions
-C. giants
-D. CRC errors
-E. deferred
-F. runts
-Correct Answer: B
-
-QUESTION 34
-Which three statements accurately describe layer 2 Ethernet switches?(choose three)
-A. Microsegmentation decreases the number of collisions on the network.
-B. if a switch receives a frame for an unkown destination, it uses ARP to resolve the address.
-C. Spanning Tree Protocol allows switches to automatically share vlan information.
-D. In a properly functioning network with redundant switched paths, each switched aegment will contain one root bridge with all its ports in the forwarding state. All other switches in that broadcast domain will have only one root port.
-E. Establishing vlans increases the number of broadcast domains.
-F. Switches that are configured with vlans make forwarding decisions based on both layer 2 and layer 3 address information.
-Correct Answer: ADE
-
-QUESTION 300
-If three devices are plugged into one port on a switch and two devices are plugged into a different port, how many collision domains are on the switch?
-A. 2
-B. 4
-C. 5
-D. 6
-Correct Answer: A
-
-QUESTION 49
-Which two statements about wireless LAN controllers are true? (Choose two.)
-A. They can simplify the management and deployment of wireless LANs.
-B. They rely on external firewalls for WLAN security.
-C. They are best suited to smaller wireless networks.
-D. They must be configured through a GUI over HTTP or HTTPS.
-E. They can manage mobility policies at a systemwide level.
-Correct Answer: AE
-
-QUESTION 242
-Refer to the exhibit.What two results would occur if the hub were to be replaced with a switch that is configured with one Ethernet VLAN? (choose two)
-A. The number of collision domains would decrease.
-B. The number of collision domains would increase.
-C. The number of broadcast domains would remain the same.
-D. The number of collision domains would remain the same.
-E. The number of broadcast domains would increase.
-Correct Answer: BC
-
-QUESTION 404
-Which of the following statements describe the network shown in the graphic? (Choose two.)
-A. There are two broadcast domains in the network.
-B. There are four broadcast domains in the network.
-C. There are six broadcast domains in the network.
-D. There are four collision domains in the network.
-E. There are five collision domains in the network.
-F. There are seven collision domains in the network.
-Correct Answer: AF
-
-QUESTION 268
-Which statement about unicast frame forwarding on a switch is true?
-A. The TCAM table stores destination MAC addresses
-B. If the destination MAC address is unknown, the frame is flooded to every port that is configured in the same VLAN except on the port that it was received on.
-C. The CAM table is used to determine whether traffic is permitted or denied on a switch
-D. The source address is used to determine the switch port to which a frame is forwarded
-Correct Answer: B
-
-QUESTION 130
-Refer to the exhibit.Switch-1 needs to send data to a host with a MAC address of 00b0.d056.efa4.What will Switch-1 do with this data?
-A. switch-1 will drop the data because it dose not have an entry for that MAC address
-B. switch-1 will flood the data out all of its port from which the data originated
-C. switch-1 will forward the data to its default gateway
-D. switch-1 will send an ARP request out all its ports except the port from which the data originated
-Correct Answer: B
-
-QUESTION 213
-Which type of mac address is aged automatically by the switch?
-A. Dynamic
-B. Static
-C. automatic
-D. manual
-Correct Answer: A
-
-QUESTION 298
-Which type of MAC address is aged automatically by the switch?
-A. automatic
-B. manual
-C. dynamic
-D. static
-Correct Answer: C
-
-QUESTION 348
-Which two types of information are held in the MAC address table? (Choose two)
-A. MAC address
-B. soure IP address
-C. destination IP address
-D. Protocols
-E. Port numbers
-Correct Answer: AE
-
-QUESTION 407
-Refer to the exhibit.Which two statements are true of the interfaces on switch1?(choose two)
-A. A hub is connected directly to FastEthernet0/5
-B. FastEthernet0/1 is configured as a trunk link.
-C. FastEthernet0/5 has statically assigned mac address
-D. Interface FastEthernet0/2 has been disable.
-E. Multiple devices are connected directly to FastEthernet0/1.
-F. FastEthernet0/1 is connected to a host with multiple network interface cards.
-Correct Answer: AB
-
-QUESTION 341
-Why will a switch never learn a broadcast address?
-A. Broadcast frames are never sent to swiches.
-B. Broadcast addresses use an incorrect format for the switching table.
-C. A broadcast address will never be the source address of a frame.
-D. Broadcasts only use network layer addressing.
-E. A broadcast frame is never forwarded by a switch.
-Correct Answer: C
-
-QUESTION 97
-What are two reasons that duplex mismatches can be difficult to diagnose? (Choose two.)
-A. The interface displays a connected (up/up) state even when the duplex settings are mismatched.
-B. 1-Gbps interfaces are full-duplex by default.
-C. Full-duplex interfaces use CSMA/CD logic, so mismatches may be disguised by collisions.
-D. The symptoms of a duplex mismatch may be intermittent.
-E. Autonegotiation is disabled.
-Correct Answer: AD
-
-QUESTION 164
-Which three options are switchport config that can always avoid duplex mismatch error between the switches? (Choose Three.)
-A. set both side on auto-negotation
-B. set both sides on half-duplex
-C. set one side auto and other side half-duplex
-D. set both side of connection to full-duplex
-E. set one side auto and other side on full-duplex
-F. set one side full-duplex and other side half-duplex
-Correct Answer: ABD
-
-QUESTION 188
-Which symptom most commonly indicates that two connecting interface are configured with a duplex mismatch?
-A. an interface with up/down state
-B. an interface with down/down state
-C. late collisions on the interface
-D. the spanning tree process shutting down
-Correct Answer: C
-
-QUESTION 389
-Which symptom can cause duplex mismatch problem?
-A. no earner
-B. collisions on interface
-C. giants
-D. CRC errors
-Correct Answer: B
-
-QUESTION 109
-Refer to the exhibit. Give this output for SwitchC, what should the network administrator's next action be?
-A. Check the trunk encapsulation mode for SwitchC's fa0/1 port.
-B. Check the duplex mode for SwitchC's fa0/1 port.
-C. Check the duplex mode for SwitchA's fa0/2 port.
-D. Check the trunk encapsulation mode for SwitchA's fa0/2 port.
-Correct Answer: C
-
-QUESTION 178
-which command is used to know the duplex speed of serial link?
-A. show line
-B. show interface
-C. show protocol
-D. show run
-Correct Answer: B
-
-QUESTION 233
-Refer to exhibit. Which command can you enter to verify link speed and duplex setting on the interface?
-A. router# show protocols
-B. router#show startup-config
-C. router#show line
-D. router#show interface gig0/1
-Correct Answer: D
-
-QUESTION 75
-Which switching method duplicates the first six bytes of a frame before making a switching decision?
-A. fragment-free switching
-B. store and-forward switching
-C. cut through switching
-D. ASIC switching
-Correct Answer: C
-
-QUESTION 220
-How many broadcast domains are shown in the graphic assuming only the default vlan is configured on the switches?
-A. one
-B. six
-C. twelve
-D. two
-Correct Answer: A
-
-QUESTION 11
-If a router has four interfaces and each interface is connected to four switches, how many broadcast domains are present on the router?
-A. 1
-B. 2
-C. 4
-D. 8
-Correct Answer: C
-
-QUESTION 177
-Which type of cable must you use to connect two device with MDI interfaces ?
-A. cut-through
-B. straight-through
-C. crossover
-D. rollover
-Correct Answer: C
-
-QUESTION 40
-What are three characteristics of the TCP protocol? (Choose three.)
-A. It uses a single SYN-ACK message to establish a connection.
-B. The connection is established before data is transmitted.
-C. It ensures that all data is transmitted and received by the remote device.
-D. It supports significantly higher transmission speeds than UDP.
-E. It requires applications to determine when data packets must be retransmitted.
-F. It uses separate SYN and ACK messages to establish a connection.
-Correct Answer: BCF
-
-QUESTION 161
-In which byte of an IP packet can traffic be marked ?
-A. the QoS byte
-B. the CoS byte
-C. the ToS byte
-D. the DSCP byte
-Correct Answer: C
-
-QUESTION 171
-What layer of the OSI Model is included in TCP/IP Model's INTERNET layer?
-A. Application
-B. Session
-C. Data Link
-D. Presentation
-E. Network
-Correct Answer: E
-
-QUESTION 96
-Which command can you enter to verify that a 128-bit address is live and responding?
-A. traceroute
-B. telnet
-C. ping
-D. show ipv6
-Correct Answer: C
-
-QUESTION 143
-Which utility can you use to determine whether a switch can send echo requests and replies?
-A. ping
-B. traceroute
-C. ssh
-D. telnet
-Correct Answer: A
-
-QUESTION 325
-Which command can be used from a PC to verify the connectivity between hosts that connect through a switch in the same LAN?
-A. ping address
-B. tracert address
-C. traceroute address
-D. arp address
-Correct Answer: A
-
-QUESTION 245
-Which three encapsulation layers in the OSI model are combined into the TCP/IP application layer? (Choose three)
-A. Session
-B. transport
-C. presentation
-D. application
-E. data-link
-F. network
-Correct Answer: ACD
-
-QUESTION 317
-Which networking Technology is currently recognized as the standard for computer networking?
-A. System network architecture
-B. Transmission control protocol/Internet protocol
-C. Open system Interconnect
-D. Open network architecture
-Correct Answer: B
-
-QUESTION 415
-Where does routing occur within the DoD TCP/IP reference model?
-A. application
-B. internet
-C. network
-D. transport
-Correct Answer: B
-
-QUESTION 148
-Which two options are features of the extended ping command? (Choose two.)
-A. It can send a specific number of packet
-B. It can send packet from specified interface of IP address
-C. It can resolve the destination host name
-D. It can ping multiple host at the same time
-E. it can count the number of hops to the remote host.
-Correct Answer: AB
-
-QUESTION 184
-Which two statements about extended traceroute command are true? (choose two)
-A. it can send packets from a specified interface or ip address
-B. it can use a specified TTL value
-C. it can validate the reply data
-D. it can use a specificed TOS
-E. it can repeated automatically to a specified interval
-Correct Answer: AB
-
-QUESTION 157
-What are contained in layer 2 ethernet frame? (Choose Three.)
-A. Preamble
-B. TTL
-C. Type/length
-D. Frame check sequence
-E. version
-F. http://bbs.hh010.com/
-Correct Answer: ACD
-
-QUESTION 374
-Which two options are fields in an Ethernet frame? (choose two)
-A. frame check sequence
-B. header
-C. source IP address
-D. destination IP address
-E. type
-Correct Answer: AE
-
-QUESTION 35
-Which two correctly describe steps in the OSI data encapsulation process? (Choose two.)
-A. The transport layer divides a data stream into segments and may add reliability and flow control information.
-B. The data link layer adds physical source and destination addresses and an FCS to the segment.
-C. Packets are created when the network layer encapsulates a frame with source and destination host addresses and protocol-related control information.
-D. Packets are created when the network layer adds Layer 3 addresses and control information to a segment.
-E. The presentation layer translates bits into voltages for transmission across the physical link.
-Correct Answer: AD
-
-QUESTION 416
-If Computer A is sending traffic to computer B, which option is the source ip address when a packet leaves R1 on interface F0/1?
-A. IP address of the R2 interface
-B. Ip address of computer B
-C. Ip address of R1 interface
-D. Ip address of Computer A
-Correct Answer: D
-
-QUESTION 367
-When troubleshooting Ethernet connectivity issues, how can you verify that an IP address is known to a router?
-A. Check whether the IP address is in the routing table
-B. Check whether an ACL is blocking the IP address
-C. Check whether the IP address is in the CAM table
-D. Check whether the IP address is in the ARP table
-Correct Answer: D
-
-QUESTION 44
-What is the authoritative source for an address lookup?
-A. a recursive DNS search
-B. the operating system cache
-C. the ISP local cache
-D. the browser cache
-Correct Answer: A
-
-QUESTION 101
-Which layer in the OSI reference model is responsible for determining the availability of the receiving program and checking to see if enough resources exist for that communication?
-A. transport
-B. network
-C. presentation
-D. session
-E. application
-Correct Answer: E
-
-QUESTION 181
-When troubleshooting client DNS issues, which two task must you perform? (Choose two)
-A. Ping a public website IP address.
-B. Ping the DNS Server.
-C. Determine whether a DHCP address has been assigned.
-D. Determine whether the hardware address is correct.
-E. Determine whether the name servers have been configured
-Correct Answer: BE
-
-QUESTION 291
-What are two statement for SSH?
-A. use port 22
-B. unsecured
-C. encrypted
-D. most common remote-access method
-E. operate at transport
-Correct Answer: AC
-
-QUESTION 432
-Which two statements about UDP are true? (Choose two)
-A. It can transmit data at a rate higher than the path capacity
-B. It uses a three-way handshake to ensure that traffic is transmitted properly
-C. It guarantees packet delivery
-D. it includes protection against duplicate packets
-E. it can be used for multicast and broadcast traffic
-Correct Answer: AE
-
-QUESTION 229
-For what two purposes does the Ethernet protocol use physical addresses? (Choose two.)
-A. to uniquely identify devices at Layer 2
-B. to allow communication with devices on a different network
-C. to differentiate a Layer 2 frame from a Layer 3 packet
-D. to establish a priority system to determine which device gets to transmit first
-E. to allow communication between different devices on the same network
-F. to allow detection of a remote device when its physical address is unknown
-Correct Answer: AE
+1. (3) 下列何者是IANA保留供私人(Private)使用之IP位址? ①172.32.1.34 ②172.15.2.43 ③172.20.23.186 ④192.169.0.1。
+2. (4) 下列何者不是IANA 保留供私人(Private)使用之IP位址? ①10.23.123.54 ②192.168.0.34 ③172.18.168.23 ④172.32.45.127。
+3. (2) IANA 保留 Class B 供私人使用之IP位址範圍為何? ①172.1.0.0~172.31.255.255 ②172.16.0.0~172.31.255.255 ③172.32.0.0~172.63.255.255 ④172.16.0.0~172.32.255.255。
+4. (3) IANA 保留 Class C供私人使用之IP位址範圍為何? ①192.168.1.0~192.168.1.254 ②192.168.0.0~192.168.0.255 ③192.168.0.0~192.168.255.255 ④192.168.10.0~192.168.10.255。
+5. (4) IANA 保留 Class A供私人使用之IP位址範圍為何? ①10.0.0.0~10.0.255.255 ②10.10.0.0~10.10.255.255 ③100.0.0.0~100.100.255.255 ④10.0.0.0~10.255.255.255。
+6. (2) IANA 保留幾個Class B 網路供私人使用? ①8 ②16 ③24 ④32。
+7. (1) IANA 保留幾個Class A 網路供私人使用? ①1 ②24 ③128 ④256。
+8. (4) IANA 保留幾個Class C網路供私人使用? ①1 ②24 ③128 ④256。
+9. (2) 200.12.34.53/29所在的網路中,第一個可指定給設備使用之IP位址為何? ①200.12.34.1 ②200.12.34.49 ③200.12.34.17 ④200.12.34.53。
+10. (1) 200.12.34.53/26所在的網路中,最後一個可指定給設備使用之IP位址為何? ①200.12.34.62 ②200.12.34.82 ③200.12.34.78 ④200.12.34.54。
+11. (2) 179.34.42.7/23所在的網路中,最後一個可指定給設備使用之IP位址為何? ①179.34.42.254 ②179.34.43.254 ③179.34.42.255 ④179.34.43.255。
+12. (1) 下列哪一個IP 位址可指定給設備使用? ①145.23.22.255/23 ②34.234.123.47/29 ③160.68.255.255/16 ④190.43.23.159/27。
+13. (3) 若要將IP 位址為56.78.0.0/20之網路分成8個子網路,其子網路遮罩為何? ①255.255.255.224 ②255.255.224.0 ③255.255.254.0 ④255.255.248.0。
+14. (4) 若要將IP 位址為56.78.5.34/20之網路分成8個子網路,其第3個子網路IP位址為何? ①56.78.7.0/23 ②56.78.12.0/23 ③50.56.78.4.0/23 ④56.78.4.0/23。
+15. (2) 若要將IP 位址為56.78.10.34/20之網路分成8個子網路,其第4個子網路中最後一個可指定給設備使用之IP位址為何? ①56.78.4.127 ②56.78.7.254 ③56.78.8.254 ④56.78.12.254。
+16. (3) 若要將IP 位址為25.178.10.34/20之網路分成8個子網路,其每個子網路中共有幾個IP 位址可指定給設備使用? ①512 ②511 ③510 ④509。
+17. (2) 若要將IP 位址為65.8.20.34/20所在之網路分成16個子網路,其每個子網路中共有幾個IP 位址可指定給設備使用? ①252 ②254 ③255 ④256。
+18. (2) 若要將子網路遮罩為255.255.252.0之網路再分成16個子網路,其子網路遮罩為何? ①255.255.255.0 ②255.255.255.192 ③255.255.255.224 ④255.255.255.240。
+19. (2) 一個 Class A 網路最多可分成幾個相當於Class B 大小的子網路? ①128 ②256 ③512 ④64。
+20. (4) 一個 Class A 網路最多可分成幾個相當於Class C大小的子網路? ①65535 ②32768 ③65534 ④65536。
+21. (1) 下列何種 Class 之網路可指定給設備使用之IP位址數量最多? ①Class A ②Class B ③Class C ④Class D。
+22. (3) 下列何種 Class 之網路數量最多? ①Class A ②Class B ③Class C ④Class D。
+23. (2) Class A 之網路數量共有幾個? ①128 ②126 ③64 ④29。
+24. (3) Class B 之網路數量共有幾個? ①16384 ②32768 ③16384 ④8192。
+25. (4) Class C之網路數量共有幾個? ①2097152 ②8388608 ③4194304 ④2097152。
+26. (2) 若IP 位址與其子網路遮罩分別為100.35.62.65及255.255.224.0,可表示為 ①100.35.62.65/18 ②100.35.62.65/19 ③100.35.62.65/20 ④100.35.62.65/21。
+27. (3) 若IP位址為111.123.23.65/20,其中「/20」為何意? ①IP的位元數 ②子網路遮罩的位元數 ③子網路遮罩中1的位元數 ④子網路遮罩中0的位元數。
+28. (3) 若IP 位址為68.68.168.65/26,下列哪個IP 位址與前者不在同一子網路中? ①68.68.168.70 ②68.68.168.118 ③68.68.168.63 ④68.68.168.126。
+29. (2) 若IP位址為161.61.16.83/27,下列何者正確? ①該IP所在的子網路IP為161.61.16.80 ②該IP與161.61.16.65在同一子網路中 ③該IP與161.61.16.96在同一子網路中 ④該IP所在子網路的廣播IP為161.61.16.127。
+30. (3) 若IP位址為16.6.162.35/25,下列何者不正確? ①「/25」表示子網路遮罩中共有25個1位元 ②該IP位址所在子網路的廣播IP位址為16.6.162.127 ③該IP位址所在子網路可指定給設備使用的IP位址數量為128 ④該IP位址所在子網路之IP位址中的Host ID共有7個位元。
+31. (3) 使用電腦上網時,不需要設定下列哪一項? ①可用IP位址 ②子網路遮罩 ③電腦名稱 ④閘道(Gateway) IP。
+32. (3) 在全網(Full Mesh)的網狀(Mesh)拓撲中,當節點總數為20 個時,其總連線(connect)數量為多少? ①170 ②180 ③190 ④200。
+33. (3) 下列哪一種網路拓撲中的節點必須連至同一個裝置? ①星狀 ②環狀 ③匯流排 ④網狀。
+34. (1) 主從式(Client-Server)網路與對等式(Peer-to-Peer)網路比較,下列何者不是主從式網路的優點? ①建置成本較低 ②容易管理 ③具集中管理功能 ④效能較佳。
+35. (4) 下列何者是「網際網路」的英文名稱? ①Intranet ②Hinet ③Seednet ④Internet。
+36. (1) 下列哪一種網路拓撲最可靠? ①網狀 ②匯流排 ③星狀 ④環狀。
+37. (2) 對等式(Peer-to-Peer)網路與主從式(Client-Server)網路比較,下列何者不是對等式網路的優點? ①容易架設 ②安全控管較佳 ③無需依賴伺服器功能 ④建置成本較低。
+38. (1) 下列何者是「企業內網路」的英文名稱? ①Intranet ②Binet ③TANet ④Extranet。
+39. (3) 下列何者不是制定通訊協定通常應考量的事項? ①語法(Syntax) ②時序(Timing) ③多工(Multiplex) ④語意(Semantic)。
+40. (3) 下列何者不正確? ①半雙工在同一時間只能單向傳送 ②全雙工在同一時間可雙向傳送 ③頻寬是指最高頻率與中間頻率的差距 ④每秒鐘所能完成的週期數稱為頻率。
+41. (2) 下列何種技術,可將類比信號轉換為數位信號? ①分時多工(TDM) ②脈碼調變(PCM) ③分頻多工(FDM) ④分波多工(WDM)。
+42. (2) OSI 參考模型中,下列何者不是表示層(Presentation Layer)的功能? ①加解密 ②流量控制 ③內碼轉換 ④壓縮。
+43. (2) OSI 參考模型中,下列何者不是應用層(Application Layer)的協定? ①SNMP ②IGMP ③SMTP ④POP。
+44. (4) OSI 參考模型中,下列何者不是會談層(Session Layer)的功能? ①會談連線維護 ②資料交換管理 ③對話控制 ④流量控制。
+45. (4) OSI 參考模型中,下列何者不是傳輸層(Transport Layer)的功能? ①將資料切段 ②錯誤控制 ③壅塞控制 ④資料加密。
+46. (2) OSI 參考模型中,下列何者不是資料鏈路層(Data Link Layer)的功能? ①錯誤控制 ②邏輯定址 ③媒體存取控制 ④流量控制。
+47. (2) OSI 參考模型中,哪一層具有實體定址的功能? ①實體層 ②資料鏈路層 ③網路層 ④傳輸層。
+48. (2) OSI 參考模型中,哪一層具有路由(Routing)的功能? ①資料鏈路層 ②網路層 ③傳輸層 ④會談層。
+49. (3) 乙太網路所使用的媒體存取控制的方法為何? ①符記(Token) ②CSMA/CA ③CSMA/CD ④輪詢(Polling)。
+50. (3) 乙太網路所使用的實體位址共有幾個位元組(Byte)? ①4 ②5 ③6 ④7。
+51. (3) 乙太網路所使用的實體位址中,以何種符號區隔兩個位元組? ①; ②. ③: ④,。
+52. (4) 下列哪一種 IEEE Wireless LAN 標準的傳輸速率最高? ①802.11a ②802.11b ③802.11g ④802.11n。
+53. (2) 下列哪一種 IEEE Wireless LAN 標準的傳輸速率最低? ①802.11a ②802.11b ③802.11g ④802.11n。
+54. (2) IEEE 802.11a標準所使用的頻段為何? ①2.5GHz ②5GHz ③2.3GHz ④2.4GHz。
+55. (4) IEEE 802.11g標準所使用的頻段為何? ①5GHz ②2.5GHz ③2.3GHz ④2.4GHz。
+56. (2) IEEE 802.11g 標準的最高傳輸速率為多少? ①11Mbps ②54Mbps ③5.5Mbps ④25Mbps。
+57. (2) IEEE 802.11b 標準的最高傳輸速率為多少? ①5.5Mbps ②11Mbps ③54Mbps ④25Mbps。
+58. (4) 位元串使用循環冗餘核對(Cyclic Redundancy Check, CRC)作錯誤檢測,產生器多項式(Generator polynomial)為x4+x+1,計算位元串011100101010之CRC為 ①0000 ②1101 ③1110 ④1100。
+59. (1) TCP及UDP 之 Well-Known 埠號範圍為 ①0~1023 ②0~65535 ③1024~65535 ④0~255。
+60. (3) 一個IPv6 位址是由多少位元所組成? ①32 ②64 ③128 ④1024。
+61. (4) FTP 連上伺服器之預設埠號為何? ①110 ②25 ③80 ④21。
+62. (1) 下列哪一種通訊協定可將IP位址轉換成MAC位址? ①ARP ②RARP ③DNS ④ICMP。
+63. (1) 使用PPP設定WAN的連線時,何種通訊協定負責建立與組態設定PPP? ①LCP ②CDP ③X.25 ④CHAP。
+64. (2) 使用部分(Fractional) T1 電路中之3個channel,其連接速率(bps)為何? ①1,536,000 ②192,000 ③320,000 ④64,000。
+65. (3) IPv6 網路中的電腦無法存取網路時,除錯之第一步為ping local host或loop back 位址,所使用的指令為何? ①ping ipv6127.0.0.1 ②ping 0.0.0.0 ③ping ipv6::1 ④ping ipv60:0。
+66. (2) DNS 工作於 ①網路層(Network Layer) ②傳輸層(Transport Layer) ③會談層(Session Layer) ④應用層(Application Layer)。
+67. (4) 對IPv6 網路中的一台主機檢視自動組態的IPv6位址,得到MAC位址為0010:AB23:4567,下列何者是採用EUI-64產生的global-unicast interface identifier? ①0010:ABFF:FE23:4567 ②0210:ABFF:FE23:4567 ③0010:AB23:4567 ④0210:ABFF:FE23:4567。
+68. (4) 下列哪一個通訊協定同時使用TCP與UDP協定? ①FTP ②SMTP ③Telnet ④DNS。
+69. (4) DHCP 用戶端使用何目的位址以申請其IP位址? ①127.0.0.1 ②10.0.0.1 ③0.0.0.0 ④255.255.255.255。
+70. (3) 下列何者是描述最為適合的資料封包封裝順序? ①segment header+network header+data+frame trailer ②segment header+network header+data+segment trailer ③frame header+network header+segment header+data+frame trailer ④frame header+segment header+data+segment trailer。
+71. (1) 下列何者正確? ①訊號雜訊比(Signal to Noise Ratio, SNR)定義為訊號功率除以雜訊功率 ②傳輸介質中電纜線的通訊距離最長 ③OSI參考模型中第四層是表現層(Presentation layer) ④通訊端可以接收及發送資料,但一次只能做一個動作,不能同時收發稱為多工。
+72. (3) 下列對於 TCP/IP通訊協定之敘述,何者不正確? ①由IETF 組織負責建立與管理 ②為現實網路中普遍使用之通訊協定 ③為某家特定廠商所發表的通訊協定 ④與OSI參考模型相同,擁有分層概念。
+73. (4) 下列何者不是通訊系統中的雜訊? ①熱雜訊(Thermal noise) ②調變間雜訊(Intermodulation noise) ③串音(Crosstalk) ④多重路徑(Multipath)。
+74. (2) 下列對於無線電波的傳輸方式,何者不正確? ①大氣層中的電離層將電波反射,使訊號透過反射傳送至接收端 ②無線電波的傳輸,不會受到障礙物干擾 ③無線電波傳輸,隨著距離增加而衰減 ④無線電波如同光一樣,也會產生散射。
+75. (3) 通訊的訊號功率減損,不包含下列哪一種? ①減弱失真(Attenuation distortion) ②延遲失真(Delay distortion) ③多重路徑(Multipath) ④雜訊(Noise)。
+76. (3) 下列何者不是數位調變技術的優點? ①受雜訊的影響較小 ②安全性高 ③使多媒體資料不易多工 ④含數位錯誤控制碼,可偵測與修改傳輸時的錯誤。
+77. (1) 下列何者為FDDI (Fiber Distributed Data Interface)網路所使用的傳輸介質? ①光纖 ②無遮蔽雙絞線 ③遮蔽雙絞線 ④同軸電纜。
+78. (4) 關於多輸入多輸出(Multi-Input Multi-Outputm, MIMO)技術,下列何者不正確? ①可同時建立多個通訊管道 ②可增加通訊容量(Capacity) ③可降低多重路徑(Multipath)衰減 ④在傳送端及接收端只允許使用單一天線發射及接收多種訊號。
+79. (3) 下列何者不是頻率分割多重存取(Frequency Division Multiple Access, FDMA)的特性? ①將頻寬分割成多個不同頻率的頻道 ②行動台必須使用雙工器(Duplexer) ③每一個發送端的數位信號都使用相同的頻率 ④一旦頻道被指定後,基地台與行動台可在頻道上同時且持續傳送訊號。
+80. (3) 下列何者不是分時多重存取(Time Division Multiple Access, TDMA)的特性? ①將頻道以時間作切割,分成多個時槽,每個時槽內只有一個使用者可以傳送或接收資料 ②多個使用者可以共用單一的載波頻率 ③資料傳輸速率與使用者個數無關 ④不同的使用者要用保護時槽(Guard slots)區隔,所以會造成額外負擔。
+81. (3) 下列何者不是分碼多重存取(Code Division Multiple Access, CDMA)的特性? ①將傳輸訊息所需頻寬擴展至整個使用頻譜 ②可允許多個使用者共用相同頻率 ③可完全消除任何干擾 ④每個使用者可擁有自己的碼字(Codeword)。
+82. (2) 下列何種資料通訊媒介的安全性最高? ①衛星 ②光纖 ③微波 ④同軸電纜。
+83. (2) 重複出現之相同形狀訊號,每一訊號從開始到結束的時間長度稱為 ①振幅 ②週期 ③頻率 ④相位。
+84. (1) 將每個「窄頻寬、高能量」的位元訊號與展頻碼(Spreading Code)進行運算,將原本訊號延展為數倍頻寬,並將訊號能量降低到低於背景雜訊,再把訊號傳送出去的技術稱為 ①直接序列展頻(Direct Sequence Spread Spectrum, DSSS) ②跳頻式展頻(Frequency Hopping Spread Spectrum, FHSS) ③紅外線 ④正交分頻多工(Orthogonal Frequency Division Multiplexing, OFDM)。
+85. (2) 先將要傳送的資料分割成許多區塊,並將連續的頻道切割成多個子頻道,每次依序傳送資料區塊時,會隨機選擇要把封包放至哪一個頻道,此項技術稱為? ①直接序列展頻(Direct Sequence Spread Spectrum, DSSS) ②跳頻式展頻(Frequency Hopping Spread Spectrum, FHSS) ③紅外線 ④正交分頻多工(Orthogonal Frequency Division Multiplexing, OFDM)。
+86. (4) 10Base5 乙太網路標準距離最遠可傳送幾公尺? ①500 ②1250 ③2000 ④2500公尺。
+87. (3) 下列何者不是行動多路徑無線電頻道(Mobile Multipath Radio Channel)的參數? ①脈衝回應(Impulse Response) ②諧和時間(Coherence Time) ③路徑減損(Path Loss) ④諧和頻寬(Coherence Bandwidth)。
+88. (4) 若ISP 提供16個同網段之ADSL固定IP位址,則使用者實際可用之上網IP位址(不含Gateway)共有幾個? ①16 ②15 ③14 ④13。
+89. (3) DNS 網域名稱服務系統是下列何種資料庫型態的應用? ①單一檔案式資料庫 ②多檔案式資料庫 ③分散式資料庫 ④集中式資料庫。
+90. (3) 下列何者可用來檢測資料傳輸的錯誤? ①TCP ②UDP ③CRC ④SMTP。
+91. (4) IPv6的IP位址表示,是以:符號將之分成幾個區域,而每個區域又各有幾個位元? ①4個區域,8個位元 ②4個區域,16個位元 ③8個區域,8個位元 ④8個區域,16個位元。
+92. (3) MAC位址的前幾個位元是用來代表廠商代號? ①12 ②16 ③24 ④32。
+93. (3) 欲得知由主機X到主機Y需經過的路由器,從主機X執行下列哪一個指令? ①ping ②telnet ③tracert ④ipconfig。
+94. (1) SNMP 中預設使用下列哪一埠號接收自代管裝置的Trap 訊息? ①UDP port 162 ②UDP port 161 ③TCP port 162 ④TCP port 161。
+95. (4) 使用 IEEE 802.11b 無線區域網路時,一般會使用下列哪3個頻道? ①1、3、5 ②2、4、6 ③1、11、21 ④1、6、11。
+96. (1) 當路由器執行OSPF時,會送出下列哪一種封包與鄰近的路由器間保持連線? ①Hello封包 ②OSP封包 ③Ping封包 ④ICMP封包。
+97. (2) 可選用下列哪一種IEEE協定來規劃 VLAN Trunk? ①802.1P ②802.1Q ③802.1X ④802.3X。
+98. (4) VoIP 不使用下列哪一種協定? ①RTCP ②H.323 ③SIP ④SSL。
+99. (4) 在CentOS Linux 環境中,下列哪一種指令可查詢作業系統之類型與版本? ①whois ②nslookup ③traceroute ④cat /etc/os-release。
+100. (2) Windows 系統中,可使用下列哪一個指令來檢視系統所使用的TCP/UDP 埠號? ①netstat -np ②netstat -na ③netstat -nr ④netstat -no。
+101. (2) DHCP用戶端,在開機時使用下列哪一種方式請求分配IP? ①傳送要求IP訊息給路由器 ②於網路中廣播要求IP訊息 ③直接傳送要求IP訊息給DHCP伺服器 ④傳送要求IP訊息給另一個DHCP用戶端。
+102. (3) IEEE 802.1X使用下列哪一種協定? ①WEP ②SCP ③EAP ④RTP。
+103. (3) 下列 CentOS Linux指令,何者可用來判斷是否已經安裝 Apache 伺服器? ①rpm -i httpd ②rpm -e httpd ③rpm -q httpd ④rpm -v httpd。
+104. (4) 若 CentOS Linux 系統中未安裝Apache 伺服器,下列Linux指令何者可線上安裝 Apache 伺服器? ①yum remove httpd ②yum info httpd ③yum update httpd ④yum install httpd。
+105. (4) 下列CentOS Linux指令,何者可用來啟動 Apache 伺服器? ①systemctl restart vsftpd ②systemctl restart httpd ③systemctl start vsftpd ④systemctl start httpd。
+106. (2) 下列 CentOS Linux指令,何者可用來重新啟動 Apache 伺服器? ①systemctl restart vsftpd ②systemctl restart httpd ③systemctl start vsftpd ④systemctl start httpd。
+107. (1) CentOS Linux 系統中,何者是Apache 伺服器預設的設定檔名稱及其路徑? ①/etc/httpd/conf/httpd.conf ②/etc/conf/httpd/httpd.conf ③/etc/http/conf/http.conf ④/etc/conf/http/http.conf。
+108. (2) CentOS Linux 系統中,安裝之Apache 伺服器的httpd.conf設定檔中,何者可用來指定 Apache 伺服器的名稱? ①HostName ②ServerName ③ApacheName ④SetName。
+109. (3) CentOS Linux 系統中,修改完 Apache 伺服器的httpd.conf 設定檔後,何時會套用新的設定? ①修改後,即會直接套用新的設定 ②修改後,需執行 systemctl restart vsftpd,才會套用新的設定 ③修改後,需執行 systemctl restart httpd,才會套用新的設定 ④修改後,需執行 systemctl restart http,才會套用新的設定。
+110. (3) CentOS Linux 系統中,Apache 伺服器預設的本機首頁是放在下列哪一目錄下? ①/etc/html/www ②/etc/www/html ③/var/www/html ④/var/html/www。
+111. (2) CentOS Linux 系統中,Apache 伺服器預設的本機首頁檔名為何? ①index.htm ②index.html ③home.htm ④home.html。
+112. (1) CentOS Linux 系統中,欲關閉 Apache 伺服器的個人網頁功能,需於 httpd.conf 中加上下列哪一設定? ①UserDir disabled ②UserDir enabled ③DirUser disabled ④DirUser enabled。
+113. (3) CentOS Linux 系統中,Apache伺服器預設的個人網頁之目錄為何? ①public_htm ②public-htm ③public_html ④public-html。
+114. (2) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定預設的首頁檔名? ①IndexDirectory ②DirectoryIndex ③HomeIndex ④IndexHome。
+115. (3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定網頁根目錄? ①DirRoot ②RootDir ③DocumentRoot ④RootDocument。
+116. (1) CentOS Linux 系統中,Apache伺服器之 httpd.conf設定檔中,下列何設定可用來指定允許使用保持連線(Persistent Connection),使每次連線能提出多個要求? ①KeepAlive On ②KeepAlive Off ③KeepConnected On ④KeepConnected Off。
+117. (4) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定保持連線的逾期時間? ①KeepConnected Timer ②KeepConnected Timeout ③KeepAlive Timer ④KeepAlive Timeout。
+118. (1) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定監聽的通訊埠? ①Listen ②Set Listen ③Keep Listen ④Listen To。
+119. (2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來限制同一時間的連線個數不得超過100? ①MaxClient 100 ②MaxClients 100 ③MaxConnection 100 ④MaxConnections 100。
+120. (3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定每一連線所能提出的最多要求連線個數為10? ①MaxRequestsKeepAlive 10 ②MaxRequestKeepAlive 10 ③MaxKeepAliveRequests 10 ④MaxKeepAliveRequest 10。
+121. (2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定最多待命程式個數為15? ①MaxSpareServer 15 ②MaxSpareServers 15 ③MaxStandbyServer 15 ④MaxStandbyServers 15。
+122. (4) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定最少待命程式個數為5? ①MinStandbyServer 5 ②MinStandbyServers 5 ③MinSpareServer 5 ④MinSpareServers 5。
+123. (4) CentOS Linux 系統中,Apache 伺服器之httpd.conf 設定檔中,下列何設定可用來指定網站管理者的電子郵件信箱? ①ServerAdminMail ②ServerMail ③AdminMail ④ServerAdmin。
+124. (1) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定設定檔及紀錄檔的位置? ①ServerRoot ②ConfigRoot ③ConfigLogRoot ④DocumentRoot。
+125. (2) CentOS Linux 系統中,Apache伺服器之 httpd.conf設定檔中,下列何設定可用來指定伺服器的主機名稱及埠號? ①HostName ②ServerName ③HostNamePort ④ServerNamePort。
+126. (3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定伺服器啟動時要執行的httpd程式個數? ①StartServerNumbers ②StartServerNumber ③StartServers ④StartServer。
+127. (4) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定等待用戶端回應的時間為20秒,若連線在這段時間內未傳送任何資料,就切斷該連線? ①ClientTimeout 20 ②ClientWaitTime 20 ③ConnectionTimeout 20 ④Timeout 20。
+128. (2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定使用者個人網頁放置的目錄名稱? ①UserHome ②UserDir ③UserPersonal ④UserWeb。
+129. (2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來建立目錄別名? ①alias ②Alias ③DirAlias ④DirName。
+130. (1) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定允許存取伺服器的用戶端位址? ①Allow ②AllowClient ③Deny ④DenyClient。
+131. (3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定不允許存取伺服器的用戶端位址? ①Allow ②AllowClient ③Deny ④DenyClient。
+132. (3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定自訂錯誤訊息? ①ErrorMessage ②ErrorMessages ③ErrorDocument ④ErrorDocuments。
+133. (1) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定先套用Allow,再套用Deny 的規則? ①Order Allow,Deny ②Sequence Allow,Deny ③AllowDeny Order Allow,Deny ④AllowDeny Sequence Allow,Deny。
+134. (2) CentOS Linux 系統中,Apache 伺服器之 httpd.conf 設定檔中,下列何設定可用來指定URL重新導向? ①Reroute ②Redirect ③ReURL ④ReHome。
+135. (4) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定存取訊息紀錄檔的紀錄格式及檔案位置? ①LogDir ②LogFormat Dir ③CustomLogFormat ④CustomLog。
+136. (3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定錯誤訊息紀錄檔檔名? ①ErrorMessage ②ErrorMessageLog ③ErrorLog ④ErrorLogMessage。
+137. (1) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定產生完整的狀態資訊? ①ExtendedStatus On ②CompleteStatus On ③FullStatus On ④AllStatus On。
+138. (4) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來定義紀錄的格式? ①LogLevel ②LogForm ③LogStyle ④LogFormat。
+139. (1) CentOS Linux 系統中,Apache伺服器允許瀏覽器以下列何種參數,查詢動態的狀態資訊? ①server-status ②server-info ③server-dynamic ④server-static。
+140. (2) CentOS Linux 系統中,Apache伺服器允許瀏覽器以下列何種參數,查詢靜態的組態資訊? ①server-status ②server-info ③server-dynamic ④server-static。
+141. (3) CentOS Linux系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定設定檔名稱以保護目錄? ①ProtectedFileName ②ProtectedFile ③AccessFileName ④AccessFile。
+142. (4) CentOS Linux系統中,Apache伺服器之httpd.conf設定檔中,以下列何種預設檔案來保護目錄? ①.httpaccess ②.httpdaccess ③.haccess ④.htaccess。
+143. (2) CentOS Linux系統中,下列哪一指令可指定存取被密碼保護之網頁時,使用者需輸入名稱及密碼? ①passwd ②htpasswd ③httppasswd ④httpdpasswd。
+144. (1) 下列IP位址何者屬於Class A? ①123.45.67.89 ②135.1.23.45 ③220.45.67.89 ④230.12.34.56。
+145. (3) 下列何者為222.34.56.178/27的廣播位址? ①222.34.56.159 ②222.34.56.175 ③222.34.56.191 ④222.34.56.207。
+146. (3) 下列何者是無線區域網路之安全標準? ①IEEE 802.11a ②IEEE 802.11b ③IEEE 802.11i ④IEEE 802.11n。
+147. (3) 若有一Class C網路平均分為8個子網路(Subnet),則可用IP位址共有幾個? ①224 ②192 ③240 ④248。
+148. (3) 下列子網路遮罩(Subnet Mask)何者不存在? ①255.128.0.0 ②255.255.224.0 ③255.255.255.244 ④255.255.255.252。
+149. (2) 若子網路遮罩(Subnet Mask)為255.255.240.0,則下列何主機不必經過路由器即可與主機140.123.33.155通訊? ①140.123.173.13 ②140.123.37.24 ③140.123.110.35 ④140.123.55.46。
+150. (2) 下列何者是傳送FTP(File Transfer Protocol)控制訊息之TCP預設連接埠? ①20 ②21 ③22 ④23。
+151. (1) 下列何者是傳送FTP(File Transfer Protocol)資料訊息之TCP預設連接埠? ①20 ②21 ③22 ④23。
+152. (3) 下列何者是傳送SSH(Secure Shell)服務之TCP預設連接埠? ①20 ②21 ③22 ④23。
+153. (4) 下列何者是傳送Telnet服務之TCP預設連接埠? ①20 ②21 ③22 ④23。
+154. (1) 下列何者是傳送SMTP(Simple Mail Transfer)服務之TCP預設連接埠? ①25 ②69 ③80 ④443。
+155. (3) 下列何者是傳送WWW(World Wide Web)服務之TCP預設連接埠? ①25 ②69 ③80 ④443。
+156. (2) 下列何者是傳送TFTP(Trivial File Transfer Protocol)服務之UDP預設連接埠? ①25 ②69 ③80 ④443。
+157. (4) 下列何者是傳送SSL(Secure Socket Layer)服務之TCP預設連接埠? ①25 ②69 ③80 ④443。
+158. (2) 下列IP位址何者屬於Class B? ①123.45.67.89 ②135.1.23.45 ③220.45.67.89 ④230.12.34.56。
+159. (3) 下列IP位址何者屬於Class C? ①123.45.67.89 ②135.1.23.45 ③220.45.67.89 ④230.12.34.56。
+160. (4) 下列IP位址何者屬於Class D? ①123.45.67.89 ②135.1.23.45 ③220.45.67.89 ④230.12.34.56。
+161. (2) 下列何者為222.34.56.178/29所在之子網路的廣播位址? ①222.34.56.207 ②222.34.56.183 ③222.34.56.191 ④222.34.56.199。
+162. (3) 下列何者為222.34.56.200/28所在之子網路的廣播位址? ①222.34.56.223 ②222.34.56.215 ③222.34.56.207 ④222.34.56.231。
+163. (1) 下列何者為222.34.56.123/26所在之子網路的廣播位址? ①222.34.56.127 ②222.34.56.135 ③222.34.56.143 ④222.34.56.151。
+164. (4) 若有一Class C網路平均分為4個子網路(Subnet),則可用IP位址共有幾個? ①224 ②192 ③240 ④248。
+165. (1) 若有一Class C網路平均分為16個子網路(Subnet),則可用IP位址共有幾個? ①224 ②192 ③240 ④248。
+166. (2) 若有一Class C網路平均分為32個子網路(Subnet),則可用IP位址共有幾個? ①224 ②192 ③240 ④248。
+167. (1) 當資料由網路模型中較低層向高層傳送時,封包標頭將作以下何種更動? ①移除 ②增加 ③不動 ④重排。
+168. (1) 下列哪一項不是IPSec所使用的協定? ①Point to point tunneling protocol(PPTP) ②Authentication header(AH) ③Internet key exchange(IKE) ④Encapsulated security payload(ESP)。
+169. (4) 在ARP快取中可以發現下列哪一項資料? ①使用者存取網站的歷史資料 ②防火牆的組態表 ③網域註冊資訊 ④IP與MAC位址的交互參照。
+170. (3) 軟硬體元件若有損壞,可能造成所儲存的資訊遺失,為了降低因系統當機所造成的影響,需採取下列何種管理措施? ①變更管理 ②能量管理 ③復原管理 ④績效管理。
+171. (1) 關於網路訊錄(Cookies),下列何者不正確? ①無法增加電腦連線的速度 ②可能造成系統漏洞 ③可能被惡意程式利用 ④可記錄使用者瀏覽網頁的資訊、帳號及密碼。
+172. (2) 關於電腦病毒,下列何者不正確? ①可能具有自我複製的特性 ②中毒後會立即有明顯徵兆 ③可能寄生在開機程式 ④可能破壞硬碟資料。
+173. (1) 收發電子郵件為下列哪一種雲端服務模式? ①軟體即服務(SaaS) ②平台即服務(PaaS) ③基礎架構即服務(IaaS) ④應用即服務(AaaS)。
+174. (1) 網路社群服務不會應用下列哪一種雲端部署? ①校園雲(Campus Cloud) ②混合雲(Hybrid Cloud) ③公有雲(Public Cloud) ④私有雲(Private Cloud)。
+175. (4) 雲端運算的技術包含下列哪些選項:A軟體層、B硬體層、C虛擬化技術、D雲端管理? ①僅包含A ②僅包含AB ③僅包含C ④包含ABCD。
+176. (2) 物聯網(IoT)的架構可分為應用層、網路層及感知層,其中感知層不包含以下哪一項? ①無線射頻識別(RFID) ②次世代網路 ③感測器裝置 ④移動通訊裝置。
+177. (3) 感測器(Sensor)量測資訊並傳輸至網路節點,其與網路節點連結的硬體單元稱為? ①資料感測單元 ②資料蒐集單元 ③資料收發單元 ④處理單元。
+178. (4) 關於物聯網中感測器,下列何者不正確? ①可用於偵測環境中的特定參數 ②消耗功率低 ③通常可在惡劣的氣候中運作 ④無法重複使用。
+179. (3) 關於無線感測網路在居家環境的應用,通常不包含下列哪一項? ①居家防盜監控 ②居家監控 ③網路訂票 ④家庭自動化。
+180. (1) 利用超文字傳輸安全協定(HTTPS)進行網路傳輸時,下列何者並非其優點? ①可預防電腦病毒 ②正確的身分驗證 ③安全的資料傳輸 ④可搭配不同的加密機制。
+181. (2) 下列何者不可用於加密電子郵件? ①PGP ②HTTP ③S/MIME ④數位簽章。
+182. (2) 資訊安全的防護重點項目,不包含下列哪一項? ①防毒 ②環保 ③防災 ④防竊。
+183. (1) 「資訊系統應具備唯一識別及鑑別機關使用者之代號,不應有共用帳號之行為」,此敘述屬於下列哪一項資訊安全項目? ①使用者之識別與鑑別 ②裝置之識別與鑑別 ③鑑別資訊管理 ④鑑別資訊回饋。
+184. (2) 網站的網址以https://開始,表示該網站可能使用下列何種機制? ①使用SET安全機制 ②使用TLS安全機制 ③使用防毒機制 ④使用XOOPS架設機制。
+185. (4) 資訊中心為確保電腦作業安全而採取之即時防護措施,不包含下列哪一項? ①實體防護 ②資料防護 ③程式防護 ④使用者登錄紀錄。
+186. (3) SSL協定是使用下列哪一項資訊進行網站身分鑑別? ①電腦名稱 ②IP位址 ③數位憑證(Digital Certificate) ④使用者帳號及密碼。
+187. (1) 以下哪項是終端設備的特性? ①終端設備可經由中間設備連上網際網路 ②所有終端設備都是網路流量的來源 ③發生連結故障時,終端設備會將流量指向備用路徑 ④終端設備必須經由有線傳輸網路才能連上網際網路。
+188. (3) 物聯網(IoT)中的數位資料應如何表示? ①使用英數字元 ②數字0到9 ③1和0 ④色彩條。
+189. (4) 何謂「巨量資料」? ①指IoT中由中間裝置產生的超大封包 ②指為滿足資料的需要會不斷增加終端裝置 ③指來自雲端運算應用程式的資料 ④指收集及分析大量的資料,可以為決策者提供深入資訊。
+190. (1) 網際網路中,使用何種協定組合傳輸資料? ①TCP/IP ②ZigBee ③Z-Wave ④Bluetooth。
+191. (4) 引發物聯網(IoT)爆炸式成長,最主要的原因是何種裝置普及化所造成? ①智慧型手機 ②電腦 ③致動器 ④感應器。
+192. (3) 以下何項是機器間(M2M)通訊的範例? ①某人從資料庫取得資訊或進行複雜分析 ②兩個人透過即時訊息應用程式相互通訊 ③垃圾桶的感應器發出垃圾已滿的訊號至垃圾車的GPS相關系統 ④電冰箱傳送電子郵件給屋主。
+193. (2) 自動化生產線上感應器偵測到異常狀況時,感應器會與控制器通訊,致使控制器自動暫停生產線並啟動警示。此情境係何種類型的通訊? ①機器到人員(M2P) ②機器間(M2M) ③人員間(P2P) ④人員到機器(P2M)。
+194. (3) 使用下列何種過程進行資訊編碼,可確保資訊安全? ①驗證 ②授權 ③加密 ④極化。
+195. (4) 以下哪項電腦程式可使用JavaScript語言編碼? ①Microsoft Word ②iPad的App遊戲 ③Android手機上的系統軟體 ④網頁上的貸款月付款小算盤。
+196. (134) IPv6位址包含哪些種類? ①單播(Unicast)位址 ②廣播(Broadcast)位址 ③多播(Multicast)位址 ④任播(Anycast)位址。
+197. (24) 下列哪些屬於IPv6位址之單播(Unicast)位址? ①鏈路(Link)位址 ②鏈路-本地(Link-Local)位址 ③站台(Site)位址 ④唯一-本地(Unique-Local)位址。
+198. (23) 下列哪些方法可以讓PC動態取得IPv6位址? ①具狀態自動組態 ②具狀態(Stateful) DHCP ③無狀態自動組態 ④無狀態(Stateless) DHCP。
+199. (34) 下列哪些路由協定可以支援IPv6? ①OSPFv2 ②RIPv1 ③OSPFv3 ④RIPng。
+200. (123) 下列哪些是Site-to-Site VPN的目的? ①資料完整性 ②鑑別性(Authentication) ③私密性(Privacy) ④防毒(Antivirus)。
+201. (14) Point-to-Point協定組合包含下列哪些協定? ①NCP ②LCP ③HDLC ④SLIP。
+202. (13) 下列哪些第2層的封裝(Encapsulation)可以使用在分封交換(Packet switching)中? ①Frame Relay ②SLIP ③ATM ④PPP。
+203. (12) 下列哪些第2層的封裝(Encapsulation)可以使用在電路交換(Circuit switching)中? ①SLIP ②HDLC ③ATM ④X.25。
+204. (134) 下列哪些第2層的封裝(Encapsulation)可以使用在專線(Leased Line)中? ①HDLC ②Frame Relay ③SLIP ④PPP。
+205. (23) 使用OSPF路由協定的路由器須維護下列哪些表格(Table)? ①Hello表格 ②路由表(Routing Table) ③拓撲表(Topology Table) ④距離向量表(Distance-vector Table)。
+206. (14) 有關OSPF的敘述,下列哪些正確? ①OSPF可以支援VLSM(Variable Length Subnet Mask) ②OSPF可以支援IP、IPX及AppleTalk協定 ③OSPF的收斂速度比RIP慢 ④OSPF是依頻寬來決定路徑。
+207. (13) 使用階層(Hierarchical)方式來設計OSPF網路的目的有哪些? ①降低路由額外負擔(Overhead) ②降低路由器設定的複雜度 ③加速收斂 ④增加延遲。
+208. (13) 下列哪些路由協定可同時支援VLSM與路由總結(Summarization)? ①RIPv2 ②IGRP ③OSPF ④RIPv1。
+209. (14) 使用距離向量(Distance-vector)路由協定時,會產生下列哪些問題? ①路由迴路(Loop) ②比鏈路狀態(Link-state)路由協定使用更多記憶體 ③比鏈路狀態(Link-state)路由協定使用更大頻寬 ④計數到無窮。
+210. (23) 使用鏈路狀態(Link-state)路由協定時,會產生下列哪些問題? ①路由迴路(Loop) ②比距離向量(Distance-vector)路由協定使用更多記憶體 ③比距離向量(Distance-vector)路由協定使用更大頻寬 ④計數到無窮。
 </textarea>
             </div>
 
@@ -605,7 +375,7 @@ Correct Answer: AE
                     <label><input type="radio" name="q-count" value="10"> 10 題</label>
                     <label><input type="radio" name="q-count" value="20"> 20 題</label>
                     <label><input type="radio" name="q-count" value="30"> 30 題</label>
-                    <label><input type="radio" name="q-count" value="custom"> 自訂 <input type="number" id="custom-q-count" min="1" disabled></label>
+                    <label><input type="radio" name="q-count" value="custom"> 自訂 <input type="text" id="custom-q-count" disabled placeholder="測驗數量或範圍 (eg. 1-70)"></label>
                 </div>
                 <button style="width: 100%; margin-top: 20px; font-size: 1.1rem; padding: 15px;" onclick="startQuiz()">▶ 解析並開始測驗</button>
             </div>
@@ -678,7 +448,7 @@ Correct Answer: AE
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-top: 20px;">
                     <button class="outline" onclick="prevFlashcard()">← 上一題</button>
-                    <button onclick="markLearned()" style="background: var(--success-bg); color: var(--success-border); border: 1px solid var(--success-border);">✔ 已學會，移出錯題閃卡</button>
+                    <button onclick="markLearned()" style="background: var(--success-bg); color: var(--success-border); border: 1px solid var(--success-border);">✔ 已學會</button>
                     <button class="outline" onclick="nextFlashcard()">下一題 →</button>
                 </div>
                 <div class="hint">⌨ 提示：可使用 <b>空白鍵</b> 翻面，<b>左右方向鍵</b> 切換題目</div>
@@ -746,7 +516,20 @@ Correct Answer: AE
                 try {
                     const pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
                     let fullText = '';
-                    for (let i = 1; i <= pdf.numPages; i++) fullText += (await (await pdf.getPage(i)).getTextContent()).items.map(item => item.str).join('\n') + '\n';
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const textContent = await page.getTextContent();
+                        let lastY = -1;
+                        let pageText = '';
+                        for (let item of textContent.items) {
+                            if (lastY !== -1 && Math.abs(item.transform[5] - lastY) > 5) {
+                                pageText += '\n';
+                            }
+                            pageText += item.str;
+                            lastY = item.transform[5];
+                        }
+                        fullText += pageText + '\n';
+                    }
                     textarea.value = fullText;
                 } catch(err) { textarea.value = "PDF 解析失敗：" + err.message; }
             } else alert('請上傳 .txt 或 .pdf 格式檔案');
@@ -757,26 +540,75 @@ Correct Answer: AE
             
             const lines = normalizedText.split('\n').map(l => l.trim()).filter(line => {
                 if (!line) return false;
-                if (/^\d+$/.test(line)) return false; 
-                if (/^---\s*PAGE\s*\d+\s*---$/i.test(line)) return false; 
+                if (/^Page \d+ of \d+/i.test(line)) return false;
+                if (/^---\s*PAGE/i.test(line)) return false;
+                if (/勞動部勞動力發展/i.test(line)) return false;
+                if (/MINISTRY OF LABOR/i.test(line)) return false;
+                if (/WORKFORCE DEVELOPMENT/i.test(line)) return false;
                 return true;
             });
 
             const questions = [];
             let currentQ = null;
             
-            const qRegex = /^(?:QUESTION\s*\d+|\d+[\.、\)]|Q\d+:?)\s*(.*)/i;
-            const optRegex = /^\(?([A-F])\)?[\.、]\s*(.*)/i; 
-            const ansRegex = /(?:Correct\s*Answer|答案|解答|Ans|Answer)[\s:：]*([A-Fa-f\s,]+)/i;
+            const qRegexTW = /^(\d+)[\.、]\s*\(([1-4A-Da-d]+)\)\s*(.*)/;
+            const qRegexCCNA = /^(?:QUESTION\s*\d+|第?\s*\d+\s*[題\.]|Q\d+[:\.]?)\s*(.*)/i;
+            const optRegex = /^\(?([A-H])\)?[\.、]\s*(.*)/i; 
+            const ansRegex = /(?:Correct\s*Answer|答案|解答|Ans(?:wer)?)[\s:：]*([A-Ha-h\s,]+)/i;
 
             const pushCurrentQuestion = () => {
-                if (currentQ && currentQ.options.length > 0 && currentQ.answer.length > 0) {
+                if (!currentQ) return;
+
+                const combinedText = currentQ.question + (currentQ.options.length === 0 ? "" : " " + currentQ.options.map(o => o.text).join(" "));
+                
+                if (currentQ.options.length === 0 && (combinedText.includes('①') || combinedText.includes('(1)'))) {
+                    let qText = combinedText.replace(/\(1\)/g, '①').replace(/\(2\)/g, '②').replace(/\(3\)/g, '③').replace(/\(4\)/g, '④');
+                    
+                    const opt1 = qText.indexOf('①');
+                    const opt2 = qText.indexOf('②');
+                    const opt3 = qText.indexOf('③');
+                    const opt4 = qText.indexOf('④');
+                    
+                    if (opt1 !== -1) {
+                        currentQ.question = qText.substring(0, opt1).trim();
+                        const t1 = qText.substring(opt1 + 1, opt2 !== -1 ? opt2 : qText.length).trim();
+                        const t2 = opt2 !== -1 ? qText.substring(opt2 + 1, opt3 !== -1 ? opt3 : qText.length).trim() : "";
+                        const t3 = opt3 !== -1 ? qText.substring(opt3 + 1, opt4 !== -1 ? opt4 : qText.length).trim() : "";
+                        const t4 = opt4 !== -1 ? qText.substring(opt4 + 1).trim() : "";
+                        
+                        if(t1) currentQ.options.push({ key: 'A', text: t1 });
+                        if(t2) currentQ.options.push({ key: 'B', text: t2 });
+                        if(t3) currentQ.options.push({ key: 'C', text: t3 });
+                        if(t4) currentQ.options.push({ key: 'D', text: t4 });
+                    }
+                }
+
+                if (currentQ.options.length > 0 && currentQ.answer.length > 0) {
+                    currentQ.question = currentQ.question.replace(/-\s+/g, '-').replace(/([\u4e00-\u9fa5])\s+([\u4e00-\u9fa5])/g, '$1$2').trim();
+                    currentQ.options.forEach(opt => {
+                        opt.text = opt.text.replace(/-\s+/g, '-').replace(/([\u4e00-\u9fa5])\s+([\u4e00-\u9fa5])/g, '$1$2').replace(/。$/, '').trim();
+                    });
                     questions.push(currentQ);
                 }
             };
 
             for (let line of lines) {
-                let qMatch = line.match(qRegex);
+                let twMatch = line.match(qRegexTW);
+                if (twMatch) {
+                    pushCurrentQuestion();
+                    let ansStr = twMatch[2];
+                    let mappedAns = [];
+                    for(let char of ansStr) {
+                        if(char === '1' || char === 'A' || char === 'a') mappedAns.push('A');
+                        if(char === '2' || char === 'B' || char === 'b') mappedAns.push('B');
+                        if(char === '3' || char === 'C' || char === 'c') mappedAns.push('C');
+                        if(char === '4' || char === 'D' || char === 'd') mappedAns.push('D');
+                    }
+                    currentQ = { question: twMatch[3] || "", options: [], answer: mappedAns };
+                    continue;
+                }
+
+                let qMatch = line.match(qRegexCCNA);
                 if (qMatch) {
                     pushCurrentQuestion();
                     currentQ = { question: qMatch[1] || "", options: [], answer: [] };
@@ -787,8 +619,7 @@ Correct Answer: AE
 
                 let ansMatch = line.match(ansRegex);
                 if (ansMatch) {
-                    currentQ.answer = ansMatch[1].replace(/[^A-Fa-f]/gi, '').toUpperCase().split('');
-                    
+                    currentQ.answer = ansMatch[1].replace(/[^A-Ha-h]/gi, '').toUpperCase().split('');
                     let cleanLine = line.replace(ansRegex, '').trim();
                     if (cleanLine) {
                         let optMatch = cleanLine.match(optRegex);
@@ -833,18 +664,44 @@ Correct Answer: AE
             parsedQuestions = parseText(text);
             if (parsedQuestions.length === 0) { alert("無法解析出任何題目，請檢查格式。"); return; }
 
-            currentTestQuestions = JSON.parse(JSON.stringify(parsedQuestions));
-            if (document.getElementById('shuffle-questions').checked) shuffleArray(currentTestQuestions);
-            
+            let baseQuestions = JSON.parse(JSON.stringify(parsedQuestions));
+            const countType = document.querySelector('input[name="q-count"]:checked').value;
+            let selectedQuestions = [];
+
+            if (countType === 'custom') {
+                const customVal = document.getElementById('custom-q-count').value.trim();
+                if (customVal.includes('-')) {
+                    let parts = customVal.split('-');
+                    let start = parseInt(parts[0]);
+                    let end = parseInt(parts[1]);
+                    if (isNaN(start) || isNaN(end) || start < 1 || end < start) {
+                        alert("自訂範圍格式錯誤！請輸入如 3-50 的格式。");
+                        return;
+                    }
+                    end = Math.min(end, baseQuestions.length); 
+                    selectedQuestions = baseQuestions.slice(start - 1, end);
+                    if (document.getElementById('shuffle-questions').checked) {
+                        shuffleArray(selectedQuestions);
+                    }
+                } else {
+                    let limit = parseInt(customVal);
+                    if (isNaN(limit) || limit < 1) limit = baseQuestions.length;
+                    if (document.getElementById('shuffle-questions').checked) shuffleArray(baseQuestions);
+                    selectedQuestions = baseQuestions.slice(0, Math.min(limit, baseQuestions.length));
+                }
+            } else {
+                let limit = countType === 'all' ? baseQuestions.length : parseInt(countType);
+                if (document.getElementById('shuffle-questions').checked) shuffleArray(baseQuestions);
+                selectedQuestions = baseQuestions.slice(0, Math.min(limit, baseQuestions.length));
+            }
+
+            currentTestQuestions = selectedQuestions;
+
             currentTestQuestions.forEach(q => {
                 if (document.getElementById('shuffle-options').checked) shuffleArray(q.options);
                 q.displayOptions = q.options.map((opt, index) => ({ ...opt, visualKey: String.fromCharCode(65 + index) }));
                 q.displayAnswer = q.displayOptions.filter(o => o.isCorrect).map(o => o.visualKey);
             });
-
-            const countType = document.querySelector('input[name="q-count"]:checked').value;
-            let limit = countType === 'custom' ? parseInt(document.getElementById('custom-q-count').value) : (countType === 'all' ? currentTestQuestions.length : parseInt(countType));
-            currentTestQuestions = currentTestQuestions.slice(0, Math.min(limit || currentTestQuestions.length, currentTestQuestions.length));
 
             userAnswers = new Array(currentTestQuestions.length).fill(null);
             currentQuestionIndex = 0; isQuizActive = true;
@@ -877,6 +734,8 @@ Correct Answer: AE
             document.getElementById('feedback-box').style.display = 'none';
             document.getElementById('submit-btn').style.display = 'block';
             document.getElementById('next-btn').style.display = 'none';
+            // BUG修復：確保每次渲染題目時，按鈕文字皆還原為「下一題」
+            document.getElementById('next-btn').innerText = '下一題 →'; 
             updateSubmitBtnState();
         }
 
