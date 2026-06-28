@@ -249,6 +249,247 @@
 96. (1) 當路由器執行OSPF時,會送出下列哪一種封包與鄰近的路由器間保持連線? ①Hello封包 ②OSP封包 ③Ping封包 ④ICMP封包。
 97. (2) 可選用下列哪一種IEEE協定來規劃 VLAN Trunk? ①802.1P ②802.1Q ③802.1X ④802.3X。
 98. (4) VoIP 不使用下列哪一種協定? ①RTCP ②H.323 ③SIP ④SSL。
+99.(4) 在CentOS Linux 環境中,下列哪一種指令可查詢作業系統之類型與版本? (1)whois (2)nslookup (3)traceroute (4)cat /etc/os-release。
+100.(2) Windows 系統中,可使用下列哪一個指令來檢視系統所使用的TCP/UDP 埠號? (1)netstat -np (2)netstat -na (3)netstat -nr (4)netstat -no。
+101.(2) DHCP用戶端,在開機時使用下列哪一種方式請求分配IP? (1)傳送要求IP 訊息給路由器 (2)於網路中廣播要求IP訊息 (3)直接傳送要求IP訊息給DHCP伺服器 (4)傳送要求IP訊息給另一個DHCP用戶端。
+102.(3) IEEE 802.1X使用下列哪一種協定? (1)WEP (2)SCP (3)EAP (4)RTP。
+103.(3) 下列 CentOS Linux指令,何者可用來判斷是否已經安裝 Apache 伺服器? (1)rpm -i httpd (2)rpm -e httpd (3)rpm -q httpd (4)rpm -v httpd。
+104.(4) 若 CentOS Linux 系統中未安裝Apache 伺服器,下列Linux指令何者線上安裝 Apache 伺服器? (1)yum remove httpd (2)yum info httpd (3)yum update httpd (4)yum install httpd。
+105.(4) 下列CentOS Linux指令,何者可用來啟動 Apache 伺服器? (1)systemctl restart vsftpd (2)systemctl restart httpd (3)systemctl start vsftpd (4)systemctl start httpd。
+106.(2) 下列 CentOS Linux指令,何者可用來重新啟動 Apache 伺服器? (1)systemctl restart vsftpd (2)systemctl restart httpd (3)systemctl start vsftpd (4)systemctl start httpd。
+107.(1) CentOS Linux 系統中,何者是Apache 伺服器預設的設定檔名稱及其路徑? (1)/etc/httpd/conf/httpd.conf (2)/etc/conf/httpd/httpd.conf (3)/etc/http/conf/http.conf (4)/etc/conf/http/http.conf。
+108.(2) CentOS Linux 系統中,安裝之Apache 伺服器的httpd.conf設定檔中,何者可用來指定 Apache 伺服器的名稱? (1)HostName (2)ServerName (3)ApacheName (4)SetName。
+109.(3) CentOS Linux 系統中,修改完 Apache 伺服器的httpd.conf 設定檔後,何時會套用新的設定? (1)修改後,即會直接套用新的設定 (2)修改後,需執行 systemctl restart vsftpd,才會套用新的設定 (3)修改後,需執行 systemctl restart httpd,才會套用新的設定 (4)修改後,需執行 systemctl restart http,才會套用新的設定。
+110.(3) CentOS Linux 系統中,Apache 伺服器預設的本機首頁是放在下列哪一目錄下? (1)/etc/html/www (2)/etc/www/html (3)/var/www/html (4)/var/html/www。
+111.(2) CentOS Linux 系統中,Apache 伺服器預設的本機首頁檔名 homes 為何? (1)index.htm (2)index.html (3)home.htm (4)home.html。
+112.(1) CentOS Linux 系統中,欲關閉 Apache 伺服器的個人網頁功能,需於 httpd.conf 中加上下列哪一設定? (1)UserDir disabled (2)UserDir enabled (3)DirUser disabled (4)DirUser enabled。
+113.(3) CentOS Linux 系統中,Apache伺服器預設的個人網頁之目錄為何? (1)public_htm (2)public-htm (3)public_html (4)public-html。
+114.(2) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定預設的首頁檔名? (1)IndexDirectory (2)DirectoryIndex (3)HomeIndex (4)Index Home。
+115.(3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定網頁根目錄? (1)DirRoot (2)RootDir (3)DocumentRoot (4)RootDocument。
+116.(1) CentOS Linux 系統中,Apache伺服器之 httpd.conf設定檔中,下列何設定可用來指定允許使用保持連線(Persistent Connection),使每次連線能提出多個要求? (1)KeepAlive On (2)KeepAlive Off (3)KeepConnected On (4)KeepConnected Off。
+117.(4) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定保持連線的逾期時間? (1)KeepConnected Timer (2)KeepConnected Timeout (3)KeepAlive Timer (4)KeepAlive Timeout。
+118.(1) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定監聽的通訊埠? (1)Listen (2)Set Listen (3)Keep Listen (4)Listen To。
+119.(2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來限制同一時間的連線個數不得超過100? (1)MaxClient 100 (2)MaxClients 100 (3)Max Connection 100 (4)Max Connections 100。
+120.(3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定每一連線所能提出的最多要求連線個數為10? (1)MaxRequests KeepAlive 10 (2)MaxRequestKeepAlive 10 (3)MaxKeepAliveRequests 10 (4)MaxKeepAliveRequest 10。
+121.(2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定最多待命程式個數為15? (1)MaxSpareServer 15 (2)MaxSpareServers 15 (3)MaxStandbyServer 15 (4)MaxStandbyServers 15。
+122.(4) CentOS Linux 系統中,Apache 伺服器之httpd.conf 設定檔中,下列何設定可用來指定最少待命程式個數為5? (1)MinStandby Server 5 (2)MinStandby Servers 5 (3)MinSpareServer 5 (4)MinSpareServers 5。
+123.(4) CentOS Linux 系統中,Apache 伺服器之httpd.conf 設定檔中,下列何設定可用來指定網站管理者的電子郵件信箱? (1)ServerAdminMail (2)ServerMail (3)Admin Mail (4)ServerAdmin。
+124.(1) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定設定檔及紀錄檔的位置? (1)ServerRoot (2)ConfigRoot (3)ConfigLogRoot (4)DocumentRoot。
+125.(2) CentOS Linux 系統中,Apache伺服器之 httpd.conf設定檔中,下列何設定可用來指定伺服器的主機名稱及埠號? (1)HostName (2)ServerName (3)HostNamePort (4)ServerName Port。
+126.(3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定伺服器啟動時要執行的httpd程式個數? (1)StartServer Numbers (2)StartServer Number (3)StartServers (4)StartServer。
+127.(4) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定等待用戶端回應的時間為20秒,若連線在這段時間內未傳送任何資料,就切斷該連線? (1)ClientTimeout 20 (2)ClientWaitTime 20 (3)ConnectionTimeout 20 (4)Timeout 20。
+128.(2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定使用者個人網頁放置的目錄名稱? (1)UserHome (2)UserDir (3)UserPersonal (4)UserWeb。
+129.(2) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來建立目錄別名? (1)alias (2)Alias (3)DirAlias (4)DirName。
+130.(1) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定允許存取伺服器的用戶端位址? (1)Allow (2)AllowClient (3)Deny (4)DenyClient。
+131.(3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定不允許存取伺服器的用戶端位址? (1)Allow (2)AllowClient (3)Deny (4)DenyClient。
+132.(3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定自訂錯誤訊息? (1)Error Message (2)ErrorMessages (3)ErrorDocument (4)ErrorDocuments。
+133.(1) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定先套用Allow,再套用Deny 的規則? (1)Order Allow, Deny (2)Sequence Allow, Deny (3)Allow Deny Order Allow, Deny (4)AllowDeny Sequence Allow, Deny。
+134.(2) CentOS Linux 系統中,Apache 伺服器之 httpd.conf 設定檔中,下列何設定可用來指定URL重新導向? (1)Reroute (2)Redirect (3)ReURL (4)ReHome。
+135.(4) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定存取訊息紀錄檔的紀錄格式及檔案位置? (1)LogDir (2)LogFormat Dir (3)CustomLogFormat (4)CustomLog。
+136.(3) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,下列何設定可用來指定錯誤訊息紀錄檔檔名? (1)ErrorMessage (2)ErrorMessageLog (3)ErrorLog (4)ErrorLogMessage。
+137.(1) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定產生完整的狀態資訊? (1)ExtendedStatus On (2)Complete Status On (3)FullStatus On (4)AllStatus On。
+138.(4) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來定義紀錄的格式? (1)LogLevel (2)LogForm (3)LogStyle (4)LogFormat。
+139.(1) CentOS Linux 系統中,Apache伺服器允許瀏覽器以下列何種參數,查詢動態的狀態資訊? (1)server-status (2)server-info (3)server-dynamic (4)server-static。
+140.(2) CentOS Linux 系統中,Apache伺服器允許瀏覽器以下列何種參數,查詢靜態的組態資訊? (1)server-status (2)server-info (3)server-dynamic (4)server-static。
+141.(3) CentOS Linux 系統中,Apache 伺服器之httpd.conf設定檔中,下列何設定可用來指定設定檔名稱以保護目錄? (1)ProtectedFileName (2)ProtectedFile (3)AccessFileName (4)AccessFile。
+142.(4) CentOS Linux 系統中,Apache伺服器之httpd.conf設定檔中,以下列何種預設檔案來保護目錄? (1).httpaccess (2).httpdaccess (3).haccess (4).htaccess。
+143.(2) CentOS Linux 系統中,下列哪一指令可指定存取被密碼保護之網頁時,使用者需輸入名稱及密碼? (1)passwd (2)htpasswd (3)httppasswd (4)httpdpasswd。
+144.(1) 下列IP位址何者屬於Class A? (1)123.45.67.89 (2)135.1.23.45 (3)220.45.67.89 (4)230.12.34.56。
+145.(3) 下列何者為222.34.56.178/27的廣播位址? (1)222.34.56.159 (2)222.34.56.175 (3)222.34.56.191 (4)222.34.56.207。
+146.(3) 下列何者是無線區域網路之安全標準? (1)IEEE 802.11a (2)IEEE 802.11b (3)IEEE 802.11i (4)IEEE 802.11n。
+147.(3) 若有一Class C網路平均分為8個子網路(Subnet),則可用IP 位址共有幾個? (1)224 (2)192 (3)240 (4)248。
+148.(3) 下列子網路遮罩(Subnet Mask)何者不存在? (1)255.128.0.0 (2)255.255.224.0 (3)255.255.255.244 (4)255.255.255.252。
+149.(2) 若子網路遮罩(Subnet Mask)為255.255.240.0,則下列何主機不必經過路由器即可與主機140.123.33.155通訊? (1)140.123.173.13 (2)140.123.37.24 (3)140.123.110.35 (4)140.123.55.46。
+150.(2) 下列何者是傳送FTP (File Transfer Protocol)控制訊息之TCP 預設連接埠? (1)20 (2)21 (3)22 (4)23。
+151.(1) 下列何者是傳送FTP (File Transfer Protocol)資料訊息之TCP 預設連接埠? (1)20 (2)21 (3)22 (4)23。
+152.(3) 下列何者是傳送SSH (Secure Shell)服務之TCP預設連接埠? (1)20 (2)21 (3)22 (4)23。
+153.(4) 下列何者是傳送 Telnet 服務之 TCP預設連接埠? (1)20 (2)21 (3)22 (4)23。
+154.(1) 下列何者是傳送SMTP (Simple Mail Transfer)服務之TCP預設連接埠? (1)25 (2)269 (3)80 (4)443。
+155.(2) 下列何者是傳送WWW(World Wide Web)服務之TCP預設連接埠? (1)25 (2)269 (3)80 (4)443。
+156.(2) 下列何者是傳送TFTP(Trivial File Transfer Protocol)服務之UDP預設連接埠? (1)25 (2)69 (3)80 (4)443。
+157.(4) 下列何者是傳送SSL (Secure Socket Layer)服務之TCP預設連接埠? (1)25 (2)269 (3)80 (4)443。
+158.(2) 下列IP位址何者屬於Class B? (1)123.45.67.89 (2)135.1.23.45 (3)220.45.67.89 (4)230.12.34.56。
+159.(3) 下列IP位址何者屬於Class C? (1)123.45.67.89 (2)135.1.23.45 (3)220.45.67.89 (4)230.12.34.56。
+160.(4) 下列IP位址何者屬於Class D? (1)123.45.67.89 (2)135.1.23.45 (3)220.45.67.89 (4)230.12.34.56。
+161.(2) 下列何者為222.34.56.178/29所在之子網路的廣播位址? (1)222.34.56.207 (2)222.34.56.183 (3)222.34.56.191 (4)222.34.56.199。
+162.(3) 下列何者為222.34.56.200/28 所在之子網路的廣播位址? (1)222.34.56.223 (2)222.34.56.215 (3)222.34.56.207 (4)222.34.56.231。
+163.(1) 下列何者為222.34.56.123/26 所在之子網路的廣播位址? (1)222.34.56.127 (2)222.34.56.135 (3)222.34.56.143 (4)222.34.56.151。
+164.(4) 若有一Class C網路平均分為4個子網路(Subnet),則可用IP位址共有幾個? (1)224 (2)192 (3)240 (4)248。
+165.(1) 若有一Class C網路平均分為16個子網路(Subnet),則可用IP位址共有幾個? (1)224 (2)192 (3)240 (4)248。
+166.(2) 若有一Class C網路平均分為32個子網路(Subnet),則可用IP位址共有幾個? (1)224 (2)192 (3)240 (4)248。
+167.(1) 當資料由網路模型中較低層向高層傳送時,封包標頭將作以下何種更動? (1)移除 (2)增加 (3)不動 (4)重排。
+168.(1) 下列哪一項不是IPSec 所使用的協定? (1)Point to point tunneling protocol (PPTP) (2)Authentication header (AH) (3)Internet key exchange (IKE) (4)Encapsulated security payload (ESP)。
+169.(4) 在ARP快取中可以發現下列哪一項資料? (1)使用者存取網站的歷史資料 (2)防火牆的組態表 (3)網域註冊資訊 (4)IP與MAC位址的交互參照。
+170.(3) 軟硬體元件若有損壞,可能造成所儲存的資訊遺失,為了降低因系統當機所造成的影響,需採取下列何種管理措施? (1)變更管理 (2)能量管理 (3)復原管理 (4)績效管理。
+171.(1) 關於網路訊息(Cookies),下列何者不正確? (1)無法增加電腦連線的速度 (2)開能造成系統漏洞 (3)可能被惡意程式利用 (4)可記錄使用者瀏覽網頁的資訊、帳號及密碼。
+172.(2) 關於電腦病毒,下列何者不正確? (1)可能具有自我複製的特性 (2)中毒後會立即有明顯徵兆 (3)可能寄生在開機程式 (4)可能破壞硬碟資料。
+173.(1) 收發電子郵件為下列哪一種雲端服務模式? (1)軟體即服務(Software as a Service, SaaS) (2)平台即服務(Platform as a Service, PaaS) (3)基礎架構即服務(Infrastructure as a Service, IaaS) (4)應用即服務(Application as a Service, AaaS)。
+174.(1) 網路社群服務不會應用下列哪一種雲端部署? (1)校園雲(Campus Cloud) (2)混合雲(Hybrid Cloud) (3)公有雲(Public Cloud) (4)私有雲(Private Cloud)。
+175.(4) 雲端運算的技術包含下列哪些選項:A軟體層、B硬體層、C虛擬化技術、D雲端管理? (1)僅包含A (2)僅包含AB (3)僅包含ABC (4)包含ABCD。
+176.(2) 物聯網(IoT)的架構可分為應用層、網路層及感知層,其中感知層不包含以下哪一項? (1)無線射頻識別(RFID) (2)次世代網路 (3)感測器裝置 (4)移動通訊裝置。
+177.(3) 感測器(Sensor)量測資訊並傳輸至網路節點,其與網路節點連結的硬體單元稱為? (1)資料感測單元 (2)資料蒐集單元 (3)資料收發單元 (4)處理單元。
+178.(4) 關於物聯網中感測器,下列何者不正確? (1)可用於偵測環境中的特定參數 (2)消耗功率低 (3)通常可在惡劣的氣候中運作 (4)無法重複使用。
+179.(3) 關於無線感測網路在居家環境的應用,通常不包含下列哪一項? (1)居家防盜監控 (2)居家監控 (3)網路訂票 (4)家庭自動化。
+180.(1) 利用超文字傳輸安全協定(Hypertext Transfer Protocol Secure, HTTPS)進行網路傳輸時,下列何者並非其優點? (1)可預防電腦病毒 (2)正確的身分驗證 (3)安全的資料傳輸 (4)可搭配不同的加密機制。
+181.(2) 下列何者不可用於加密電子郵件? (1)PGP (Pretty Good Privacy) (2)HTTP (Hypertext Transfer Protocol) (3)S/MIME (Secure/Multipurpose Internet Mail Extension) (4)數位簽章。
+182.(2) 資訊安全的防護重點項目,不包含下列哪一項? (1)防毒 (2)環保 (3)防災 (4)防竊。
+183.(1) 「資訊系統應具備唯一識別及鑑別機關使用者之代號,不應有共用帳號之行為」,此敘述屬於下列哪一項資訊安全項目? (1)使用者之識別與鑑別 (2)裝置之識別與鑑別 (3)鑑別資訊管理 (4)鑑別資訊回饋。
+184.(2) 網站的網址以https://開始,表示該網站可能使用下列何種機制? (1)使用 SET 安全機制 (2)使用TLS 安全機制 (3)使用防毒機制 (4)使用 XOOPS 架設機制。
+185.(4) 資訊中心為確保電腦作業安全而採取之即時防護措施,不包含下列哪一項? (1)實體防護 (2)資料防護 (3)程式防護 (4)使用者登錄紀錄。
+186.(3) SSL (Secure Sockets Layer)協定是使用下列哪一項資訊進行網站身分鑑別? (1)電腦名稱 (2)IP位址 (3)數位憑證(Digital Certificate) (4)使用者帳號及密碼。
+187.(1) 以下哪項是終端設備的特性? (1)終端設備可經由中間設備連上網際網路 (2)所有終端設備都是網路流量的來源 (3)發生連結故障時,終端設備會將流量指向備用路徑 (4)終端設備必須經由有線傳輸網路才能連上網際網路。
+188.(3) 物聯網(IoT)中的數位資料應如何表示? (1)使用英數字元 (2)數字0到9 (3)1和0 (4)色彩條。
+189.(4) 何謂「巨量資料」? (1)指 IoT 中由中間裝置產生的超大封包 (2)指為滿足資料的需要,會不斷增加終端裝置、伺服器及路由器的數量 (3)指來自雲端運算應用程式的資料 (4)指收集及分析大量的資料,可以為決策者提供深入資訊。
+190.(1) 網際網路中,使用何種協定組合傳輸資料? (1)TCP/IP (2)ZigBee (3)Z-Wave (4)Bluetooth。
+191.(4) 引發物聯網(IoT)爆炸式成長,最主要的原因是何種裝置普及化所造成? (1)智慧型手機 (2)電腦 (3)致動器 (4)感應器。
+192.(3) 以下何項是機器間(M2M)通訊的範例? (1)某人從資料庫取得資訊或進行複雜分析 (2)兩個人透過即時訊息應用程式相互通訊 (3)垃圾桶的感應器發出垃圾已滿的訊號至垃圾車的GPS相關系統,以調整路線 (4)電冰箱傳送電子郵件給屋主,以提醒屋主購買牛奶。
+193.(2) 自動化生產線上感應器偵測到異常狀況時,感應器會與控制器通訊,致使控制器自動暫停生產線並啟動警示。此情境係何種類型的通訊? (1)機器到人員(M2P) (2)機器間(M2M) (3)人員間(P2P) (4)人員到機器(P2M)。
+194.(3) 使用下列何種過程進行資訊編碼,可確保資訊安全? (1)驗證 (2)授權 (3)加密 (4)極化。
+195.(4) 以下哪項電腦程式可使用JavaScript 語言編碼? (1)Microsoft Word (2)iPad 的App 遊戲 (3)Android 手機上的系統軟體 (4)網頁上的貸款月付款小算盤。
+196.(134) IPv6位址包含哪些種類? (1)單播(Unicast)位址 (2)廣播(Broadcast)位址 (3)多播(Multicast) 位址 (4)任播(Anycast) 位址。
+197.(24) 下列哪些屬於IPv6位址之單播(Unicast)位址? (1)鏈路(Link)位址 (2)鏈路-本地(Link-Local) 位址 (3)站台(Site) 位址 (4)唯一-本地(Unique-Local)位址。
+198.(23) 下列哪些方法可以讓PC動態取得IPv6位址? (1)具狀態自動組態(Stateful Autoconfiguration) (2)具狀態(Stateful) DHCP (3)無狀態自動組態(Stateless Autoconfiguration) (4)無狀態(Stateless) DHCP。
+199.(34) 下列哪些路由協定(Routing Protocol)可以支援IPv6? (1)OSPFv2 (2)RIPv1 (3)OSPFv3 (4)RIPng。
+200.(123) 下列哪些是 Site-to-Site VPN的目的? (1)資料完整性 (2)鑑別性(Authentication) (3)私密性(Privacy) (4)防毒(Antivirus)。
+201.(123) Point-to-Point 協定組合包含下列哪些協定? (1)NCP (2)LCP (3)HDLC (4)SLIP。
+202.(134) 下列哪些第2層的封裝(Encapsulation)可以使用在分封交換(Packet switching)中? (1)Frame Relay (2)SLIP (3)ATM (4)PPP。
+203.(24) 下列哪些第2層的封裝(Encapsulation)可以使用在電路交換(Circuit switching)中? (1)SLIP (2)HDLC (3)ATM (4)X.25。
+204.(14) 下列哪些第2層的封裝(Encapsulation)可以使用在專線(Leased Line)中? (1)HDLC (2)Frame Relay (3)SLIP (4)PPP。
+205.(123) 使用OSPF 路由協定的路由器須維護下列哪些表格(Table)? (1)Hello 表格 (2)路由表(Routing Table) (3)拓撲表(Topology Table) (4)距離向量表(Distance-vector Table)。
+206.(124) 有關OSPF的敘述,下列哪些正確? (1)OSPF可以支援VLSM (Variable Length Subnet Mask) (2)OSPF可以支援IP、IPX及AppleTalk 協定 (3)OSPF 的收斂速度比RIP慢 (4)OSPF 是依頻寬來決定路徑。
+207.(13) 使用階層(Hierarchical)方式來設計 OSPF 網路的目的有哪些? (1)降低路由額外負擔(Overhead) (2)降低路由器設定的複雜度 (3)加速收斂 (4)增加延遲。
+208.(13) 下列哪些路由協定可同時支援VLSM (Variable Length Subnet Mask)與路由總結(Summarization) ? (1)RIPv2 (2)IGRP (3)OSPF (4)RIPv1。
+209.(14) 使用距離向量(Distance-vector) 路由協定時,會產生下列哪些問題? (1)路由迴路(Loop) (2)比鏈路狀態(Link-state)路由協定使用更多記憶體 (3)比鏈路狀態(Link-state)路由協定使用更大頻寬 (4)計數到無窮。
+210.(23) 使用鏈路狀態(Link-state)路由協定時,會產生下列哪些問題? (1)路由迴路(Loop) (2)比距離向量(Distance-vector)路由協定使用更多記憶體 (3)比距離向量(Distance-vector)路由協定使用更大頻寬 (4)計數到無窮。
+211.(24) 下列哪些功能可以使路由器降低網路壅塞情形? (1)允許更多的封包碰撞 (2)阻隔不需要的廣播封包 (3)使用實體(Physical)位址過濾封包 (4)使用邏輯(Logical)位址過濾封包。
+212.(234) 下列哪些方法可以解決距離向量(Distance-vector)所產生的迴路(Loop)問題? (1)垂直分割 (Split Vertical) (2)反向毒害(Poison Reverse) (3)水平分割(Split Horizon) (4)觸發更新(Triggered Update)。
+213.(12) RIPv2使用下列哪些方法避免路由迴路(Loop)? (1)水平分割(Split Horizon) (2)滯留計時器(Hold-down Timer) (3)無級別遮罩(Classless Masking) (4)認證。
+214.(13) 下列哪些是直通式交換(Cut-through Switching)的技術特性? (1)比存轉交換(Store-forward Switching)的延遲短 (2)將整個碼框複製到緩衝器中 (3)將碼框中目的位址複製到緩衝器中 (4)比存轉交換(Store-forward Switching)的延遲長。
+215.(23) 下列哪些是存轉交換(Store-forward Switching)的技術特性? (1)轉送錯誤碼框 (2)可以計算CRC值 (3)丟棄過大封包 (4)轉送過大封包。
+216.(13) 下列哪些是使用LAN區段分割(Segmentation)的優點? (1)減少各碰撞區(Collision domain)中之使用者數量 (2)降低成本 (3)增加使用者使用頻寬 (4)增加延遲。
+217.(13) 有關LAN交換器,下列哪些正確? (1)比路由器具較多高速埠 (2)使用IP位址作為交換依據 (3)降低媒體存取競爭 (4)降低存取媒體頻寬。
+218.(24) 下列哪些是交換器優於路由器的特性? (1)較多管理控制能力 (2)較低額外負擔(Overhead) (3)較多功能 (4)較高運送量(Throughput)。
+219.(34) 下列哪些協定可使交換器避免網路迴路? (1)IEEE 802.1Q (2)IEEE 802.3 (3)IEEE 802.1D (4)IEEE 802.1w。
+220.(14) 下列哪些是展開樹協定(Spanning Tree Protocol)選定根橋接器的依據? (1)橋接器 ID (2)展開樹更新(Update)號碼 (3)橋接器酬載資料單元(Bridge Payload Data Unit, BPDU)更新(Update) 號碼 (4)橋接器優先權(Priority)。
+221.(124) 下列區段哪些是展開樹(Spanning Tree)埠可能的狀態? (1)Learning (2)Listening (3)Initializing (4)Forwarding。
+222.(23) 下列哪些IP位址屬於子網路 199.199.11.20/28中可用的IP位址? (1)199.199.11.14 (2)199.199.11.17 (3)199.199.11.29 (4)199.199.11.31。
+223.(24) 針對預設的子網路遮罩,下列哪些正確? (1)所有主機ID位元為1 (2)所有主機 ID 位元為0 (3)所有網路ID位元為0 (4)所有網路ID位元為1。
+224.(34) 使用ping 指令去ping一個目的位址時,若不成功,來源端主機可能收到下列哪些錯誤訊息? (1)Echo Ping (2)Error Reply (3)Destination Unreachable (4)Time Exceeded。
+225.(14) 在200.88.32.0的網路上做子網路切割,假設每個子網路可用的IP位址數量為30個,下列哪些表示方式正確? (1)200.88.32.0/27 (2)200.88.32.0 遮罩 255.255.255.240 (3)200.88.32.0/26 (4)200.88.32.0 遮罩 255.255.255.224。
+226.(124) 下列哪些是TCP協定所提供的功能? (1)連接導向(Connection-oriented) (2)壅塞控制 (3)找尋路徑 (4)錯誤控制。
+227.(234) 下列哪些是UDP 協定的特性? (1)可靠傳輸 (2)非連接導向(Connectionless) (3)不可靠傳輸 (4)不使用回應(Acknowledgement)。
+228.(23) 下列哪些是私有(Private) IP位址? (1)172.15.0.0 (2)192.168.10.0 (3)172.30.0.0 (4)172.168.0.0。
+229.(124) 下列哪些是網路層的協定? (1)ARP (2)ICMP (3)SIP (4)RARP。
+230.(13) 下列哪些屬於非連接導向通訊(Connectionless Communication)? (1)TFTP (2)FTP (3)SNMP (4)Ping。
+231.(234) 下列哪些是DHCP (Dynamic Host Configuration Protocol)的優點? (1)更多的IP位址 (2)自動更新IP相關參數設定 (3)自動分配IP位址給主機 (4)避免 IP 位址衝突。
+232.(23) 下列哪些是DNS (Domain Name System)的目的? (1)協助使用者取得某公司名稱 (2)協助使用者取得某主機的IP位址 (3)將網域名稱轉成IP位址 (4)將IP 位址轉成實體位址。
+233.(124) 下列哪些資料鏈路層(Data Link Layer)的功能? (1)流量控制 (2)錯誤通知 (3)指定 IP位址 (4)實體定址(Physical Addressing)。
+234.(14) 下列哪些應用是使用於應用層(Application Layer)? (1)E-mail (2)TCP (3)SIP (4)雲端文書處理軟體。
+235.(12) 有關乙太網路(Ethernet)運作,下列哪些正確? (1)碰撞發生後,工作站須後退(Back off)並等待一段時間 (2)傳送資料前,工作站須先傾聽(Listen) (3)傾聽傳輸媒體前,工作站可以傳送資料 (4)當碰撞發生,工作站仍可傳送資料。
+236.(13) 下列哪些協定使用在資料鏈路層(Data Link Layer)? (1)LLC (2)IP (3)MAC (4)UDP。
+237.(34) 下列哪些是連接導向(Connection-oriented)網路協定的特性? (1)無路 (2)具動態路徑選擇 (3)具靜態路徑選擇 (4)需保留網路資源。
+238.(134) 連接導向(Connection-oriented)網路協定資料傳送包含下列哪些步驟? (1)建立連線 (2)測試連線 (3)傳送資料 (4)中止連線。
+239.(134) 在區域網路(LAN)中,造成壅塞的可能原因有哪些? (1)可用頻寬不足 (2)VLAN 分段 (3)同一個廣播領域中有太多網路裝置 (4)廣播風暴。
+240.(134) 關於FTP (File Transfer Protocol)協定,下列哪些正確? (1)傳輸層採用 TCP 協定 (2)傳輸層採用 UDP 協定 (3)支援主動式(Active)連線方式 (4)支援被動式(Passive)連線方式。
+241.(23) 關於主動式FTP(Active File Transfer Protocol)協定,下列哪些正確? (1)不須經由三向交握(Three-way Hand-shaking)建立命令傳輸通道 (2)FTP伺服器端預設使用port 21作為命令傳輸通道 (3)FTP伺服器端預設使用 port 20作為資料傳輸通道 (4)FTP伺服器端主動向用戶端請求建立資料傳輸通道。
+242.(124) 關於被動式FTP (Passive File Transfer Protocol)協定,下列哪些正確? (1)須經由三向交握(Three-way Hand-shaking)建立命令傳輸通道 (2)FTP 伺服器端預設使用port 21作為命令傳輸通道 (3)FTP 伺服器端預設使用port 20作為資料傳輸通道 (4)FTP用戶端主動向伺服器端請求建立資料連線。
+243.(12) 關於FTP (File Transfer Protocol)協定,下列哪些正確? (1)命令傳輸通道未加密 (2)資料傳輸通道未加密 (3)命令傳輸通道加密 (4)資料傳輸通道加密。
+244.(134) 關於HTTPS(Hypertext Transfer Protocol Secure)協定,下列哪些正確? (1)採用SSL/TLS協定 (2)採用SSH協定 (3)支援加密通訊及對網頁伺服器身分的鑑別 (4)經常用於全球資訊網敏感訊息的傳輸。
+245.(124) 關於Telnet 協定,下列哪些正確? (1)採用 Client-Server 方式運作 (2)可提供遠端登入之功能 (3)可提供加密功能 (4)為較不安全之遠端登入服務。
+246.(123) 關於SSH(Secure Shell) 協定,下列哪些正確? (1)採用Client-Server 方式運作 (2)可提供遠端登入功能 (3)可提供加密功能 (4)為安全考量,多數伺服器已停用SSH服務。
+247.(234) 關於通訊協定之敘述,下列哪些正確? (1)HTTPS (Hypertext Transfer Protocol Secure)協定預設採用 port 24 (2)Telnet 協定預設採用port 23 (3)SSH(Secure Shell)協定預設採用 port 22 (4)SMTP (Simple Mail Transfer Protocol)協定預設採用port 25。
+248.(124) 關於SMTP (Simple Mail Transfer Protocol)協定,下列哪些正確? (1)為Server 與 Server 之間的通訊協定 (2)可用於傳送(Transfer) 電子郵件 (3)用戶端可自郵件伺服器接收電子郵件 (4)可用於轉送(Relay)電子郵件。
+249.(13) 關於POP3(Post Office Protocol Version 3)協定,下列哪些正確? (1)採用 Client-Server 方式運作 (2)可用於伺服器間傳送(Transfer)電子郵件 (3)用戶端可自郵件伺服器接收電子郵件 (4)可用於轉送(Relay)電子郵件。
+250.(13) 關於IMAP (Internet Message Access Protocol)協定,下列哪些正確? (1)採用 Client-Server 方式運作 (2)可用於伺服器間傳送(Transfer)電子郵件 (3)用戶端可自郵件伺服器接收電子郵件 (4)可用於轉送(Relay)電子郵件。
+251.(123) 在CentOS Linux 系統中,關於以bind 建立DNS 伺服器之敘述,下列哪些正確? (1)/etc/hosts檔中,可存放 hostname 與 IP 位址之對應 (2)/etc/resolv.conf檔中,可指定DNS伺服器之IP位址 (3)/etc/nsswitch.conf檔中,可指定先採用/etc/hosts 或/etc/resolv.conf 之設定 (4)/etc/named檔中,可存放DNS 主要設定。
+252.(124) 在CentOS Linux系統中,關於以bind 建立DNS伺服器之敘述,下列哪些正確? (1)支援正解DNS(Forward-DNS) (2)支援反解DNS(Reverse-DNS) (3)不支援以 master/slave方式進行管理 (4)支援多個主機名稱對應一個IP 位址。
+253.(123) 在CentOS Linux 系統中,以bind 建立DNS 伺服器之正解 DNS檔中,關於資源紀錄 (Resource Record, RR)格式之敘述,下列哪些正確? (1)"A"提供查詢IPv4 位址紀錄 (2)"AAAA"提供查詢IPv6 位址紀錄 (3)"NS"提供查詢管理領域(zone)名稱之伺服器主機名稱 (4)"SOA"提供查詢標準作業之IPv4 位址紀錄。
+254.(123) 在CentOS Linux 系統中,以bind 建立DNS伺服器之正解DNS檔中,關於資源紀錄(Resource Record, RR)格式之敘述,下列哪些正確? (1)"SOA"提供查詢管理領域名稱的伺服器管理資訊 (2)"CNAME"提供設定某主機名稱的別名(alias) (3)"MX"提供查詢某領域名稱的郵件伺服器主機名稱 (4)"A"提供IPv6位址紀錄。
+255.(123) 在CentOS Linux系統中,以bind 建立DNS伺服器之正解DNS檔中,關於資源紀錄(Resource Record, RR)中SOA (Start of Authority)格式之敘述,下列哪些正確? (1)包含關於管理領域(zone)的資訊 (2)包含 Master DNS 伺服器主機名稱 (3)包含管理員的email (4)包含管理員的姓名。
+256.(123) 在CentOS Linux 系統中,以bind 建立DNS伺服器之正解 DNS檔中,關於資源紀錄(Resource Record, RR)中SOA (Start of Authority) 格式之敘述,下列哪些正確? (1)包含序號(Serial) (2)包含更新(Refresh)頻率 (3)包含失敗重新嘗試(Retry)時間 (4)包含快取(Cache)時間。
+257.(123) 在CentOS Linux系統中,以bind建立DNS伺服器之反解DNS檔中,關於資源紀錄(Resource Record, RR)格式之敘述,下列哪些正確? (1)"SOA"提供查詢管理領域(zone)名稱之伺服器管理資訊 (2)"NS"提供查詢管理領域(zone)名稱之伺服器主機名稱 (3)"PTR"提供IPv4位址所對應之主機名稱 (4)"A"提供IPv4 位址紀錄。
+258.(123) 在CentOS Linux 系統中,關於以vsftpd 建立FTP伺服器,下列哪些正確? (1)/etc/vsftpd/vsftpd.conf 為主設定檔 (2)/etc/pam.d/vsftpd為 vsftpd 使用PAM 模組時之相關設定檔 (3)/etc/vsftpd/ftpusers 為PAM 模組所指定之不允許登入的使用者設定檔 (4)/etc/vsftpd/user_list 預設包含可登入 vsftpd 的帳號。
+259.(234) 在CentOS Linux 系統中,關於以vsftpd 建立FTP伺服器,下列哪些正確? (1)預設允許匿名使用者(Anonymous) 上傳檔案 (2)預設允許匿名使用者(Anonymous)下載檔案 (3)預設允許真實使用者(Real Users)上傳檔案 (4)預設允許真實使用者(Real Users) 下載檔案。
+260.(13) 在CentOS Linux系統中,以vsftpd 建立FTP伺服器,下列關於 /etc/vsftpd/vsftpd.conf之敘述哪些正確? (1)可藉由"man vsftpd.conf"指令,查詢 vsftpd.conf 中之完整參數設定方式 (2)vsftpd.conf 中之 listen_port 參數決定資料通道之埠號 (3)vsftpd.conf 中之 dirmessage_enable 參數決定當使用者進入某個目錄時,是否會顯示該目錄需要注意的內容 (4)vsftpd.conf 中之 message_file 參數決定登入時之訊息檔名。
+261.(124) 在CentOS Linux系統中,以vsftpd 建立FTP伺服器,關於 /etc/vsftpd/vsftpd.conf 之敘述,下列哪些正確? (1)vsftpd.conf 中之 connect_timeout=30,表示在主動式連線模式下,若伺服器發出的連接訊號在30秒內得不到用戶端的回應,則將強制斷線 (2)vsftpd.conf 中之 accept_timeout=30,表示在被動式連線模式下,伺服器啟用 passive port 並等待用戶端超過30秒而無回應,則將強制斷線 (3)vsftpd.conf 中之 data_connection_timeout=120,表示在控制連線建立後,若伺服器無法順利在120秒內完成資料傳送,則將強制斷線 (4)vsftpd.conf 中之 idle_session_timeout=60,表示若使用者在60秒內都沒有命令動作,則將強制斷線。
+262.(124) 在CentOS Linux系統中,關於以vsftpd建立FTP伺服器之 /etc/vsftpd/vsftpd.conf敘述,下列哪些正確? (1)vsftpd.conf 中之 max_clients=30,表示若vsftpd 是以 stand alone 方式啟動,則在同一時間,限定最多只有30個用戶端可同時連上伺服器 (2)vsftpd.conf 中之 max_per_ip=5,表示同一個IP同一時間只允許5個連線 (3)vsftpd.conf 中之 ftpd_banner=Welcome!表示在使用者連線時,顯示多行歡迎詞 (4)vsftpd.conf 中之listen=YES,表示設定 vsftpd 伺服器是以 stand alone 方式啟動。
+263.(12) 在CentOS Linux 系統中,關於以vsftpd 建立FTP伺服器之 /etc/vsftpd/vsftpd.conf敘述,下列哪些正確? (1)vsftpd.conf 中之 pasv_enable=YES,表示支援資料流的被動模式(passive mode) (2)vsftpd.conf 中之 write_enable=YES,表示允許使用者上傳檔案 (3)vsftpd.conf 中之 use_localtime=YES,表示允許使用本地時間 (4)vsftpd.conf 中之banner_file=/etc/banner 表示允許使用/etc/banner作為登入後之多行歡迎詞。
+264.(123) 在CentOS Linux 系統中,關於以vsftpd 建立FTP伺服器之 /etc/vsftpd/vsftpd.conf敘述,下列哪些正確? (1)vsftpd.conf 中之 guest_enable=YES,表示任何真實使用者,均會被假設成為 guest (2)vsftpd.conf 中之 guest_username=ftp,表示在 guest_enable=YES時,預設會取得 ftp 使用者的相關權限 (3)vsftpd.conf 中之 local_enable=YES,表示允許在/etc/passwd 內的帳號以真實使用者的方式登入 vsftpd 伺服器 (4)vsftpd.conf 中之 local_max_rate=0,表示不允許真實使用者傳送任何資料。
+265.(123) 在CentOS Linux 系統中,關於以vsftpd 建立FTP伺服器 /etc/vsftpd/vsftpd.conf敘述,下列哪些正確? (1)vsftpd.conf 中之 chroot_local_user=YES,表示將真實使用者限制於本身的家目錄內工作 (2)vsftpd.conf 中之 chroot_list_enable=YES,表示啟用chroot_list_file (3)vsftpd.conf 中之 chroot_list_file=/etc/vsftpd.chroot_list,表示在 chroot_list_enable=YES時,限制/etc/vsftpd.chroot_list 中之真實使用者,只能於本身的家目錄內工作 (4)vsftpd.conf 中之 chroot_list_deny=YES,表示拒絕真實使用者切換至本身的家目錄外。
+266.(123) 在CentOS Linux 系統中,關於以vsftpd 建立FTP 伺服器之 /etc/vsftpd/vsftpd.conf敘述,下列哪些正確? (1)vsftpd.conf 中之 userlist_enable=YES,表示藉由 vsftpd 阻擋某些不受歡迎的帳號 (2)vsftpd.conf 中之 userlist_deny=YES為userlist_enable=YES時才會生效的設定 (3)vsftpd.conf 中之 userlist_file=/etc/vsftpd/user_list,表示在 userlist_deny=YES生效時,限制/etc/vsftpd/user_list 中之使用者將無法登入 vsftpd 伺服器 (4)vsftpd.conf 中之 userlist_disable=YES,表示藉由 vsftpd 阻擋某些不受歡迎的帳號。
+267.(124) 在CentOS Linux 系統中,關於以vsftpd 建立FTP伺服器之 /etc/vsftpd/vsftpd.conf敘述,下列哪些正確? (1)vsftpd.conf 中之 anonymous_enable=YES,表示允許 anonymous 使用者登入 vsftpd 伺服器 (2)vsftpd.conf 中之 anon_world_readable_only=YES,表示允許 anonymous 使用者具下載可讀檔案的權限 (3)vsftpd.conf 中之 anon_other_write_enable=YES,表示僅允許 anonymous 使用者具檔案上傳(Upload)的權限 (4)vsftpd.conf 中之 anon_mkdir_write_enable=YES,表示允許 anonymous 使用者具建立目錄的權限。
+268.(124) 在CentOS Linux 系統中,關於以vsftpd 建立FTP伺服器之 /etc/vsftpd/vsftpd.conf敘述,下列哪些正確? (1)vsftpd.conf 中之 anon_upload_enable=YES,表示允許 anonymous 使用者具有上傳資料的權限 (2)vsftpd.conf 中之 no_anon_password=YES,表示anonymous 使用者不需輸入密碼而直接登入 vsftpd 伺服器 (3)vsftpd.conf 中之 anon_max_rate=0,表示不允許 anonymous 使用者傳送任何資料 (4)vsftpd.conf 中之 anon_umask=066,表示限制 anonymous 使用者上傳檔案的權限為-rwx--x--x。
+269.(123) 在CentOS Linux 系統中,關於以dhcp 建立DHCP伺服器之 /etc/dhcp/dhcpd.conf敘述,下列哪些正確? (1)dhcpd.conf 中之 default-lease-time 2400,表示設定預設租約時間為2400秒 (2)dhcpd.conf 中之 max-lease-time 14400,表示設定使用者所能要求的最大租約時間為14400秒 (3)dhcpd.conf 中之 option domain-name-servers 192.168.1.2,表示設定用戶端之/etc/resolv.conf 檔中之 nameserver 為192.168.1.2 (4)dhcpd.conf 中之 option routers 192.168.1.254,表示設定伺服器之預設閘道為192.168.1.254。
+270.(23) 在CentOS Linux 系統中,關於以dhcp 建立DHCP伺服器 /etc/dhcp/dhcpd.conf 中 subnet 192.168.12.0 netmask 255.255.255.0 { range 192.168.12.111 192.168.12.222; host server1{hardware ethernet 12:34:56:78:9A:BC; fixed-address 192.168.12.88;}} 敘述,下列哪些正確? (1)dhcpd.conf 中之內部網段設定為192.168.12.0/24 (2)dhcpd.conf 中之可分配IP 位址範圍為192.168.12.111至192.168.12.222 (3)dhcpd.conf 中之IP位址192.168.12.88及主機名稱 server1已固定保留予擁有MAC位址 12:34:56:78:9A:BC 網卡之電腦 (4)dhcpd.conf 中之預設閘道設定為192.168.12.222。
+271.(24) 若客戶端資訊與DHCP客戶端表(Client Table)中之內容不同,可使用哪些命令形成新的繫結(Binding) ? (1)ipconfig /all (2)ipconfig /release (3)ipconfig /flushdns (4)ipconfig /renew。
+272.(23) 下列哪些協定屬 TCP/IP 模型之傳輸層(Transport Layer)協定? (1)FTP (2)UDP (3)TCP (4)IP。
+273.(124) 下列哪些協定屬TCP/IP 模型之應用層(Application Layer)協定? (1)SNMP (2)Telnet (3)WiFi (4)HTTP。
+274.(12) 下列哪些協定屬TCP/IP 模型之網路層(Network Layer)協定? (1)IP (2)ICMP (3)RIP (4)FTP。
+275.(124) 防火牆通常可具有下列哪些功能? (1)封包過濾 (2)狀態檢視 (3)資料庫檢視 (4)應用程式代理。
+276.(14) 關於UDP協定之敘述,下列哪些正確? (1)其資料包(Datagram)標頭(Header)長度為8個位元組(Byte) (2)為連接導向(Connection-oriented)協定 (3)使用CRC 檢查使用者資料錯誤 (4)串流的多媒體應用程式較常使用UDP而非TCP。
+277.(134) 關於TCP 協定之敘述,下列哪些正確? (1)其封包標頭(Header)長度最少為20個位元組(Byte) (2)為免連接(Connectionless) 協定 (3)使用3向交握(3-way Handshaking)機制建立連接 (4)使用核對和(Checksum)檢查封包標頭資料錯誤。
+278.(124) IP封包標頭格式如下表,假設其前幾位元組內容以16進位表示為: 4700 0056 0003 6000 0A06 0000 8C4E 0302 A00E 0F02…,下列哪些正確? (1)封包標頭總共有28個byte (2)封包還可再經過10個 router (3)封包所攜帶上層協定封包為UDP 協定 (4)封包之資料欄位長度為58個byte。
+279.(24) IP封包標頭格式如下表,假設其前幾位元組內容以16進位表示為: 4700 0056 0003 6000 0A06 0000 8C4E 0302 A00E 1F02 ,下列哪些正確? (1)M旗標(MF)之值為0 (2)M旗標(MF)之值為1 (3)D旗標(DF)之值為0 (4)D旗標(DF)之值為1。
+280.(23) IP封包標頭格式如下表,假設其前幾位元組內容以16進位表示為: 4700 0056 0003 6000 0A06 0000 8C4E 0302 A00E 1F02 ,下列哪些正確? (1)來源位址(Source address)為140.68.3.2 (2)目的位址(Destination address)為160.14.31.2 (3)來源位址(Source address)為140.78.3.2 (4)目的位址(Destination address)為160.24.15.2。
+281.(124) 因路由器之最大傳輸單位(Maximum Transfer Unit, MTU)限制,IPv4 封包需分割成較小封包傳輸;分割後之封包中,下列哪些欄位值可能會與原封包不同? (1)分割偏置(Fragment Offset) (2)標頭核對和(Header Checksum) (3)上層協定 (4)M旗標。
+282.(24) 關於網路位址轉譯(Network Address Translation, NAT)之敘述,下列哪些正確? (1)將具不同內部網路位址之向外封包,轉換成相同對外網路位址,且具同一埠號 (2)將具不同內部網路位址之向外封包,轉換成相同對外網路位址,但具不同埠號 (3)將進入封包,依來源位址,轉換成不同內部網路位址 (4)將進入封包,依不同埠號,轉換成不同內部網路位址。
+283.(14) 關於主機發送ICMP訊息之敘述,下列哪些正確? (1)使用者輸入 ping 指令時,主機發送"Echo Request"訊息 (2)收到"Echo Request"訊息,以"Echo Reply"訊息回應 (3)當收到具某埠(Port)之UDP封包,但主機無該埠之 Socket,以"Host Unreachable"訊息回應 (4)當收到具某埠(Port)之UDP封包,但主機無該埠之Socket,以"Port Unreachable"訊息回應。
+284.(123) 關於TCP擁塞控制(Congestion Control)之敘述,下列哪些正確? (1)使用累進遞增倍數遞減(AIMD)原理 (2)使用緩啟動(Slow Start) 演算法 (3)使用擁塞避免(Congestion Avoidance) 演算法 (4)使用擁塞偵測(Congestion Detection)演算法。
+285.(13) 下列哪些為路由器(Router)的功能? (1)IP封包交換(Packet Switching) (2)碰撞防止(Collision Prevention) (3)IP封包過濾(Packet Filtering) (4)廣播區擴大(Broadcast Domain Enlargement) 。
+286.(34) 在交換器(Switch)上,下列哪些協定可設定主幹(Trunking)組態? (1)VLAN Trunk Protocol (2)VLAN (3)802.1Q (4)ISL。
+287.(24) 下列哪些第1層(layer1)設備可擴大單一區域網路(LAN)的涵蓋區域? (1)Switch (2)Hub (3)NIC (4)Repeater。
+288.(34) 路由器於LAN端的IP位址為172.16.2.1/23,下列哪些是連線到該 LAN 之有效IP 位址? (1)172.16.1.100 (2)172.16.1.198 (3)172.16.2.255 (4)172.16.3.0。
+289.(123) 第2層(Layer 2)交換機制包括哪些功能? (1)硬體式橋接(ASIC) (2)線速(Wiring Speed) (3)低延遲(Low Latency) (4)路由(Routing)。
+290.(24) 關於第2層(Layer2)交換器(Switch)之敘述,下列哪些正確? (1)交換器是多埠的集線器(Hub) (2)交換器是多埠的橋接器(Bridge) (3)交換器從每個訊框(Frame)習得IP位址,並用此IP位址過濾網路封包 (4)交換器檢查每個訊框(Frame)中來源位址來習得 MAC位址。
+291.(13) 當採用橋接器區隔網路時,下列哪些正確? (1)增加碰撞區(Collision Domain)數量 (2)減少碰撞區(Collision Domain) 數量 (3)縮小碰撞區(Collision Domain) (4)擴大碰撞區(Collision Domain)。
+292.(234) 下列哪些是路由器WAN端介面? (1)Ethernet (2)HDLC (3)Frame Relay (4)PPP。
+293.(24) 路由器欲連接數個切割後子網路網段時,可使用何種路由協定? (1)RIPv1 (2)RIPv2 (3)IGRP (4)OSPF。
+294.(124) 在路由器間使用PPP (Point to Point Protocol)作為WAN端通訊協定時,路由器中哪些介面可用以設定PPP組態? (1)Synchronous Serial (2)Asynchronous Serial (3)LMI (Local Management Interface) (4)ISDN (Integrated Service Digital Network)。
+295.(34) 儲存區域網路(Storage Area Network, SAN)系統有哪些特徵? (1)儲存設備直接連接到伺服器 (2)總體擁有成本較網路附接儲存(NAS)系統高 (3)伺服器可直接存取特定的資料區塊 (4)係連接伺服器與儲存設備的硬體結構。
+296.(134) Layer 2交換器可使用哪些功能以增加網路上的頻寬? (1)位址學習(Address Learning) (2)路由 (Routing) (3)轉送與過濾(Forwarding and Filtering) (4)迴圈避免(Loop Avoidance)。
+297.(234) 當以交換器上之埠作為VLAN 主幹埠(Trunk Port)時,下列哪些為有效的模式? (1)Blocking (2)Dynamic Auto (3)Dynamic Desirable (4)Nonegotiate。
+298.(124) 關於TCP/IP協定,下列哪些正確? (1)網際網路中普遍使用之通訊協定 (2)有一套封包規則和定義,能應用在不同的網路之上 (3)屬於某一特定廠商和機構 (4)與OSI 模型相同,擁有分層概念。
+299.(124) 下列哪些為靜態路由(Static Routing)之特性? (1)方法簡單 (2)缺乏彈性 (3)須定期交換路徑訊息 (4)適合穩定之網路系統。
+300.(234) 下列哪些為動態路由(Dynamic Routing)之特性? (1)具有固定行程表 (2)具有彈性 (3)須定期交換路徑訊息 (4)適合變動之網路系統。
+301.(234) 下列哪些為ADSL所使用之技術? (1)FM (2)CAP (3)DMT (4)QAM。
+302.(23) 下列哪些二進制數可通過偶同位元檢查? (1)11001101 (2)10111101 (3)10001101 (4)11100110。
+303.(14) 下列哪些二進制數可通過奇同位元檢查? (1)11001101 (2)10111101 (3)10001101 (4)11100110。
+304.(13) IP位址220.35.12.100可能屬於下列哪些網段? (1)220.35.12.200/24 (2)220.35.12.200/25 (3)220.35.12.90/26 (4)220.35.12.90/27。
+305.(124) 關於IP位址222.68.120.35/26,下列哪些正確? (1)/26表示子網路遮罩中共有26個1位元 (2)該IP位址所在子網路的廣播IP位址為222.68.120.63 (3)該IP位址所在子網路可指定給設備使用的IP位址數量為62 (4)/26表示256個IP 位址分成4個網段。
+306.(124) 下列哪些為乙太網路(Ethernet)的訊框(Frame)欄位? (1)DA(目的地位址) (2)SA(來源位址) (3)Frame ID (訊框識別碼) (4)Data(資料)。
+307.(124) 關於網際網路協定(IP),下列哪些正確? (1)目前最被廣泛使用的協定為IPv4 (2)IPv4之位址長度為32位元 (3)各版IP皆廣為支援網路通信 (4)IPv6之位址長度為128位元。
+308.(123) 下列哪些為IPv6封包傳遞方式? (1)單播(Unicast) (2)任播(Anycast) (3)多播(Multicast) (4)廣播(Broadcast)。
+309.(123) 關於解決IP位址不足,可採下列哪些方法? (1)CIDR (Classless Inter-Domain Route) (2)NAT (Network Address Translation) (3)DHCP (Dynamic Host Configuration Protocol) (4)RARP (Reverse Address Resolution Protocol)。
+310.(123) 下列哪些為IPv4 與IPv6共存之轉換技術? (1)雙堆疊(Dual Stack) (2)穿隧(Tunneling) (3)轉換(Translation) (4)交換 (Switch)。
+311.(123) 關於網路服務協定之連接埠號(Port Number),下列哪些正確? (1)HTTP:80 (2)HTTPS:443 (3)SMTP:25 (4)Telnet:23。
+312.(13) 下列哪些為TCP協定的特性? (1)連接導向 (2)傳輸速率通常比 UDP 協定慢 (3)可靠性較 UDP 協定高 (4)不用考慮資料是否完成傳送。
+313.(123) 下列哪些為UDP協定的特性? (1)非連接導向 (2)傳輸速率比 TCP 協定快 (3)可靠性低 (4)適合即時性與多媒體的資料傳送。
+314.(123) 下列哪些為常見的數位編碼方式? (1)回歸零(Return to Zero, RZ)編碼 (2)曼徹斯特(Manchester)編碼 (3)MLT-3編碼 (4)CCITT 編碼。
+315.(134) 下列哪些為可能之網路遮罩? (1)255.255.255.128 (2)255.255.255.150 (3)255.255.255.192 (4)255.255.255.224。
+316.(123) 二進制:10110101與下列哪些數字相等? (1)八進制:265 (2)十進制:181 (3)十六進制:B5 (4)八進制:267。
+317.(123) 二進制:11011110與下列哪些數字相等? (1)八進制:336 (2)十進制:220 (3)十六進制:DE (4)十六進制:CD。
+318.(124) 關於IPv6,下列哪些正確? (1)IP位址由128位元組成 (2)可以用8組數字表示 (3)每組為4個字元的十六進制表示 (4)區隔每個部分的方式,是以「:」表示。
+319.(234) 關於直接序列展頻(Direct Sequence Spread Spectrum, DSSS)技術,下列哪些正確? (1)頻率範圍僅開放在902 MHz~928 MHz頻段 (2)優點為隱蔽性高,可抵抗干擾及防止竊聽 (3)原始信號必須透過二次展頻碼處理才可以獲得還原信號 (4)將所要發送的基頻(Base Band)信號轉換為頻寬較寬的展頻信號,再進行傳送。
+320.(134) 下列哪些新影響信號漸弱效應(Fading Effect)的因素? (1)信號的傳送頻寬 (2)周圍環境的溫度 (3)行動台的移動速度 (4)多路徑傳播(Multipath Propagation)。
+321.(234) 關於無線頻率使用,下列哪些正確? (1)藍牙(Bluetooth)使用必須取得電臺執照始能作為傳輸應用 (2)不需電臺執照之無線設備,只要取得型式認證即可使用 (3)國際電信聯盟(ITU)為制定頻譜規劃的組織 (4)無線頻率之使用可區分為需電臺執照(Licensed Band)與不需電臺執照(Unlicensed Band)兩種。
+322.(34) 關於藍牙無線電層(Bluetooth Radio Layer)協定,下列哪些正確? (1)使用頻率範圍為2.4GHz僅限此段 (2)傳輸方面採用展頻(Spread Spectrum)技術 (3)使用不需電臺執照的ISM頻段 (4)調變方式採用高斯頻移鍵控(GFSK)。
+323.(134) 在無線隨意網路(Wireless Ad Hoc Network)中,泛濫式(Flooding)傳輸有下列哪些缺點? (1)封包碰撞(Packet Collision) (2)多重存取(Multiple Access) (3)媒介競爭(Medium Contention) (4)冗餘重播(Redundant Rebroadcast)。
+324.(14) 關於無線感測網路(Wireless Sensor Network, WSN),下列哪些正確? (1)由多個感測器節點(Node)組成 (2)無線感測器必須隨時充電 (3)無線感測器必須具備溫度感測之功能 (4)無線感測器節點能夠在傳輸範圍(Communication Range)內藉由無線通訊溝通。
+325.(234) 關於無線射頻識別(Radio Frequency Identification, RFID)標籤,下列哪些正確? (1)被動式電子標籤傳輸距離不受限制 (2)主動式電子標籤內建小型電池 (3)被動式電子標籤利用讀取器發出的信號,轉換成電能,以完成讀取器要求 (4)主動式電子標籤比被動式電子標籤傳輸距離長,且具有較大記憶體。
+326.(12) 關於4種型態之多重存取(Multiple Access),下列哪些不正確? (1)依序存取(Ordered Access)指各傳送端皆可以隨時傳送資料 (2)隨機存取(Random Access)指傳送端需依順序傳送資料 (3)固定式存取(Deterministic Access)係以特定方式決定存取的順序 (4)組合式存取(Combinations Access)係將隨機存取、依序存取及固定式存取組合使用。
+327.(14) 關於無線傳輸模型,下列哪些不正確? (1)當電磁波撞到的物體密度比其波長小,會產生散射(Scattering) (2)當電磁波撞到密度與波長大小相當的物體,會產生散射(Scattering) (3)當電磁波撞到無法穿透的障礙物時,會造成部分電磁波繞射(Diffraction)到達接收端 (4)快漸弱(Fast Fading)是在短距離內快速變化的現象,慢漸弱(Slow Fading)則是指較長距離的平均值變化。
+328.(124) 下列哪些項目為通訊系統的要素? (1)信號發送裝置 (2)信號接收裝置 (3)信號傳送時間 (4)信號傳送機制。
+329.(123) 下列哪些屬於行動交換中心(Mobile Switching Center, MSC)的功能? (1)通話轉接(Call Handoff) (2)通話處理(Call Processing) (3)呼叫功能(Paging Function) (4)環境監測(Environmental Monitoring)。
+330.(234) 常見的網路分類(Taxonomy) 方式有哪些? (1)以使用者人數進行分類 (2)以傳播方式進行分類 (3)以傳輸信號特徵進行分類 (4)以網路涵蓋區域大小進行分類。
+331.(12) 關於光纖分散式資料介面(Fiber Distributed Data Interface, FDDI)技術,下列哪些正確? (1)對電磁及射頻干擾具有抑制能力 (2)傳輸過程中不易遭竊聽 (3)設計頻寬為 100 Mbps (4)相鄰節點間最大距離為約 2 公里。
+332.(12) 關於非同步傳輸模式(Asynchronous Transfer Mode, ATM),下列哪些正確? (1)屬於連線導向(Connection-Oriented)的網路 (2)針對應用程式的不同需求,提供多元化傳传输服務 (3)每部工作站能達155Mbps以上之傳輸速率 (4)以細胞(Cell)為單位,每個細胞長度為 53 位元組。
+333.(123) 關於編碼技術,下列哪些正確? (1)不回歸零(Non Return-To-Zero)以高電位表示1,低電位表示0 (2)曼徹斯特(Manchester)以低電位至高電位表示1,高電位至低電位表示0 (3)不回歸零反轉(Non Return-To-Zero-Inverted)以變換電位狀態表示1,不變換電位狀態表示0 (4)回歸零(Return-To-Zero)每位元都會回到零電位。
+334.(124) 關於正交分頻多工(Orthogonal Frequency Division Multiplexing, OFDM)技術,下列哪些正確? (1)載波之間存在正交關係且排列緊密 (2)具有高速資料傳輸能力,頻譜使用效率高 (3)無法抵抗多路徑(Multipath)與漸弱(Fading) (4)可以抵抗符號間干擾(Inter Symbol Interference, ISI)。
+335.(134) 關於乙太網路(Ethernet),下列哪些不正確? (1)10Base-T 乙太網路長度上限為100公尺,各區段的長度上限為100公尺 (2)10Base-FL 乙太網路使用光纖、ST接頭、集線器與網路卡等設備連接電腦 (3)10Base-FP 乙太網路以不具備中繼器功能的集線器連接裝置,最多可擁有48個裝置 (4)10Base-T 乙太網路各區段之裝置數量上限為每段通常僅有2個點對點設備裝置。
+336.(124) 關於序列線路網際網路協定(Serial Line Internet Protocol, SLIP)與點對點(Point-To-Point, PPP)的比較,下列哪些正確? (1)PPP可自動與連線的一方協商連接組態的設定 (2)PPP會將表頭資料變動的部分,使用簡單的壓縮方式 (3)SLIP僅能傳輸IPv4不支援多協定 (4)SLIP不能自動設定連接組態,也不會將表頭資料壓縮。
+337.(234) 關於數位傳輸技術,下列哪些正確? (1)只能提供128Kbps的傳輸速率 (2)資料傳輸錯誤率較類比傳輸技術低 (3)具有錯誤偵測機制 (4)可提供全雙工的連線方式。
+338.(234) 關於行動通訊系統,下列哪些正確? (1)全球定位系統(GPS)為第一代行動通訊系統的技術 (2)全球行動通訊系統(GSM)為第二代行動通訊系統 (3)寬頻分碼多重存取(WCDMA)為第三代行動通訊系統標準技術之一 (4)正交分頻多工技術(OFDM)為第四代行動通訊系統標準技術之一。
+339.(134) 關於IPsec (Internet Protocol Security),下列哪些正確? (1)用以達到網路層中端對端安全通訊的第3層協定 (2)IP 鑑別標頭(Authentication Header, AH)提供資料的完整性與認證功能 (3)封包應包含IP 鑑別標頭(Authentication Header, AH) (4)封包應包含IP封裝安全酬載(Encapsulating Security Payload, ESP)。
 </textarea>
             </div>
 
